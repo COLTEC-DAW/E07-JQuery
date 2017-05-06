@@ -1,0 +1,11 @@
+.tile {
+	width: 100px !important;
+	height: 100px !important;
+	margin: 5px !important;
+	padding: 0 !important;
+	cursor: pointer;
+}
+
+.row {
+	margin: 0  !important;
+}
