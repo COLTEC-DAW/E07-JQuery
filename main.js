@@ -17,7 +17,6 @@ $(document).ready(function() {
 	var primeiraEscolha = null;
 	var segundaEscolha = null;
 	$('.tile').click(function() {
-$(this).rotate3Di('toggle', 1000, {direction: 'clockwise'})		// o que acontece quando o cara clica 2x na mesma tile?
 		if (!($(this).hasClass('blue-grey'))) {
 			// nada
 		} else  { // porém...
