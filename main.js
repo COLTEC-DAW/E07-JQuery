@@ -5,39 +5,61 @@ var interseção = function(a, b) {
 	return Array.from(intersection);
 }
 
-	var cores = ['red', 'pink', 'orange', 'teal', 'brown', 'lime', 'green', 'purple']
+var cores = ['red', 'pink', 'orange', 'teal', 'brown', 'lime', 'green', 'purple']
 
 var verificação = function(pE, sE) {
-	var corPE = interseção(cores, pE)
-	var corSE = interseção(cores, sE)
+	var corPE = interseção(cores,  Object.create(pE))
+	var corSE = interseção(cores,  Object.create(sE))
 	return interseção(corPE, corSE).length == 1
 }
 
-$(document).ready(function() {
+var mostraCor = function(tile) {
+	tile.fadeOut('fast', function () {
+		tile.removeClass('blue-grey')
+		tile.fadeIn('fast');
+	});
+}
+var escondeCor = function(tile){
+	tile.fadeOut('fast', function () {
+		tile.addClass('blue-grey')
+		tile.hide().fadeIn('fast');
+	});
+}
+
 	var primeiraEscolha = null;
 	var segundaEscolha = null;
+$(document).ready(function() {
 	$('.tile').click(function() {
+		mostraCor($(this))
+		// o que acontece quando o cara clica 2x na mesma tile?
 		if (!($(this).hasClass('blue-grey'))) {
 			// nada
 		} else  { // porém...
 			// se ele clica em outra, precisamos tratar isso
-			$(this).removeClass('blue-grey')
 			if (primeiraEscolha == null) { // primeira carta que ele escolher
-				primeiraEscolha = {
+				$(this).removeClass('blue-grey')
+					primeiraEscolha = {
 					objeto: $(this),
 					classes: $(this).attr("class").split(' ')
 				}
+
 			} else {
+				$(this).removeClass('blue-grey')
 				segundaEscolha = {
 					objeto: $(this),
 					classes: $(this).attr("class").split(' ')
 				}
-				if (!(verificação(primeiraEscolha.classes, segundaEscolha.classes))){
-					primeiraEscolha.objeto.addClass('blue-grey')
-					segundaEscolha.objeto.addClass('blue-grey')
+				var verificar = function(a, b){
+					if (!(verificação(a.classes, b.classes))){
+						escondeCor(a.objeto)
+						escondeCor(b.objeto)
+					}	
+					primeiraEscolha = null
+					segundaEscolha = null
 				}
-				primeiraEscolha = null
-				segundaEscolha = null
+				setTimeout(function(){
+					verificar(primeiraEscolha, segundaEscolha)
+				} , 750)
 			}
 		}
 	});
