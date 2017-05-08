@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex, nofollow" />
+	<title>jQuery Flip example</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="jquery.flip.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css"/>
+    <link href="style.css" rel="stylesheet" media="all">
+</head>
+<body>
+
+	<h2>Jogo da memória</h2>
+
+    <div class = "container-fluid">
+        <div class = "row">
+
+            <!-- PRIMEIRA LINHA -->
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="image.jpg" alt="" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="jardim.jpg" alt="" />                     
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="image.jpg" alt="" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="deserto.jpg" alt="" />
+                    </div> 
+                </div>
+            </div>
+
+            <!-- SEGUNDA LINHA -->
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="deserto.jpg" alt="" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="girafa.jpg" alt="" />                     
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="gato.jpg" alt="" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="cachorro.jpg" alt="" />
+                    </div> 
+                </div>
+            </div>
+
+            <!-- TERCEIRA LINHA -->
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="gato.jpg" alt="" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="satelite.jpg" alt="" />                     
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="satelite.jpg" alt="" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="girafa.jpg" alt="" />
+                    </div> 
+                </div>
+            </div>
+
+            <!-- QUARTA LINHA -->
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="tempestade.jpg" alt="" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="cachorro.jpg" alt="" />                     
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="tempestade.jpg" alt="" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img src="jardim.jpg" alt="" />
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $(function(){
+            $(".flip-horizontal").flip({
+                trigger: 'hover'
+            });
+        });
+  	</script>
+</body>
+</html>
