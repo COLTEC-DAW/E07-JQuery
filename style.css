@@ -5,13 +5,13 @@ body{
 }
 
 #flip-this {
-	height: 199px;
-    width: 300px;
-    margin: 0 auto;
+	height: 150px;
+    width: 150px;
+    margin: 5%;
 }
 
 #flip-this img {
-	width: 300px;
+	width: 150px;
 	height: auto;
 }
 
