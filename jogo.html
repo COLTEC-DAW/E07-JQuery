@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex, nofollow" />
+	<title>Jogo da Memória</title>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="jquery.flip.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css"/>
+    <link href="style.css" rel="stylesheet" media="all">
+</head>
+<body>
+
+	<h2>Jogo da memória</h2>
+    <button type="button" class="btn btn-success" id="btInicio" onclick="iniciar();">Começar</button>
+    <button type="button" class="btn btn-primary" id="btReset" onclick="reset();" disabled="true">Reset</button>
+
+    <div class = "container">
+        <div class = "row">
+
+            <!-- PRIMEIRA LINHA -->
+
+            <div class="cartao col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca1" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca2" />                     
+                    </div> 
+                </div>
+            </div>
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca3" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca4" />
+                    </div> 
+                </div>
+            </div>
+
+            <!-- SEGUNDA LINHA -->
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca5" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca6" />                     
+                    </div> 
+                </div>
+            </div>
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca7" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca8" />
+                    </div> 
+                </div>
+            </div>
+
+            <!-- TERCEIRA LINHA -->
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca9" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca10" />                     
+                    </div> 
+                </div>
+            </div>
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca11" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca12" />
+                    </div> 
+                </div>
+            </div>
+
+            <!-- QUARTA LINHA -->
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca13" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca14" />                     
+                    </div> 
+                </div>
+            </div>
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca15" />
+                    </div> 
+                </div>
+            </div>
+
+            <div class="cartao col-xs-12  col-sm-6 col-md-3 col-lg-3">
+                <div id="flip-this" class="flip-horizontal"> 
+                    <div class="front"> </div> 
+                    <div class="back">
+                        <img class="img-responsive" src="" id="peca16" />
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+body{ 
+	font-family:'Open Sans',sans-serif; 
+	margin-top: 50px;
+	text-align: center;
+}
+
+#flip-this {
+	height: 150px;
+    width: 150px;
+    margin: 5%;
+}
+
+#flip-this img {
+	width: 150px;
+	height: auto;
+}
+
+#flip-this .front {
+    background: #2184cd;
+    color: #fff;
+    text-align: center;
+}
