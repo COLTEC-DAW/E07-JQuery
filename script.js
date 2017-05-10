@@ -51,14 +51,7 @@ $(document).ready(function(){
     
     $(function()
     {
-        $(".flip-horizontal").click(function(){
-            count++;    
-        });
 
-        $(".flip-horizontal").flip()(function(){
-            trigger: 'click';
-        });
-
-        $("")
+        $(".flip-horizontal").flip(options);
     });
 });
