@@ -1,0 +1,33 @@
+$primary: #A2D51C;
+$c-primary: #FFFFFF;
+$c-border: #000000;
+
+
+h2{
+	text-align: center;
+}
+
+body{
+	background-color: #{$primary};
+}
+
+#pai{
+	width: 100%;
+	height: 100%;
+	padding-bottom: 10px;
+}
+
+.card{
+	float: left;
+	background-color: #{$c_primary};
+
+	border-style: solid;
+	border-color: #{$c_border};
+	border-width: 1px;
+	border-radius: 7px;
+	
+	margin: 2px;
+	width: 23vw;
+	height: 23vw;
+	// http://stackoverflow.com/questions/11535827/responsive-height-proportional-to-width
+}
