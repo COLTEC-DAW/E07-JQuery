@@ -6,25 +6,39 @@
 		<link rel="stylesheet" type="text/css" href="style.css"></link>
 	</head>
 	<body>
-		<div id="pai">
-			<h2>4x4 Memory Game</h2>
-		</div>
-		<div class="card inativo" id="c1"></div>
-		<div class="card inativo" id="c2"></div>
-		<div class="card inativo" id="c3"></div>
-		<div class="card inativo" id="c4"></div>
-		<div class="card inativo" id="c5"></div>
-		<div class="card inativo" id="c6"></div>
-		<div class="card inativo" id="c7"></div>
-		<div class="card inativo" id="c8"></div>
-		<div class="card inativo" id="c9"></div>
-		<div class="card inativo" id="c10"></div>
-		<div class="card inativo" id="c11"></div>
-		<div class="card inativo" id="c12"></div>
-		<div class="card inativo" id="c13"></div>
-		<div class="card inativo" id="c14"></div>
-		<div class="card inativo" id="c15"></div>
-		<div class="card inativo" id="c16"></div>
-		<script src="utils.js"></script>
+		<style>
+			.hidden{
+				background-color: gray !important;
+			}
+		</style>
+		<h1>4x4 Memory Game</h1>
+		<table>
+			<tr>
+				<td class="blue card hidden"></td>
+				<td class="red card hidden"></td>
+				<td class="yellow card hidden"></td>
+				<td class="red card hidden"></td>
+			</tr>
+			<tr>
+				<td class="purple card hidden"></td>
+				<td class="pink card hidden"></td>
+				<td class="green card hidden"></td>
+				<td class="black card hidden"></td>
+			</tr>
+			<tr>
+				<td class="orange card hidden"></td>
+				<td class="pink card hidden"></td>
+				<td class="blue card hidden"></td>
+				<td class="purple card hidden"></td>
+			</tr>
+			<tr>
+				<td class="yellow card hidden"></td>
+				<td class="green card hidden"></td>
+				<td class="black card hidden"></td>
+				<td class="orange card hidden"></td>
+			</tr>
+		</table>
+		<script src="script.js"></script>
+		<!-- <script src="utils.js"></script> -->
 	</body>
 </html>
