@@ -16,6 +16,10 @@
     width: 23% !important;
 }
 
+.card-panel:hover {
+    cursor: pointer;
+}
+
 .titles {
     text-align: center;
 }
