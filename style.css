@@ -1,0 +1,15 @@
+h2 {
+  text-align: left; }
+
+.card {
+  align-self: center;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: 7px;
+  margin: 2px;
+  width: 100px;
+  height: 100px; }
+
+/*# sourceMappingURL=style.css.map */
