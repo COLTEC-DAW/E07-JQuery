@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo da Memória</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> <!-- jQuery-->
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <style>
+        .col-md-2{
+            height: 300px;
+            padding: 1%
+        }
+        .myContainer{
+            padding: 0% 10%; 
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="myContainer">
+        <div class="row">
+            <div id="pic1" class="col-md-2"></div>
+            <div id="pic2" class="col-md-2"></div>
+            <div id="pic3" class="col-md-2"></div>
+            <div id="pic4" class="col-md-2"></div>
+            <div id="pic5" class="col-md-2"></div>
+            <div id="pic6" class="col-md-2"></div>
+        </div>
+        
+        <div class="row">
+            <div id="pic7" class="col-md-2"></div>
+            <div id="pic8" class="col-md-2"></div>
+            <div id="pic9" class="col-md-2"></div>
+            <div id="pic10" class="col-md-2"></div>
+            <div id="pic11" class="col-md-2"></div>
+            <div id="pic12" class="col-md-2"></div>
+        </div>
+        
+        <div class="row">
+            <div id="pic13" class="col-md-2"></div>
+            <div id="pic14" class="col-md-2"></div>
+            <div id="pic15" class="col-md-2"></div>
+            <div id="pic16" class="col-md-2"></div>
+            <div id="pic17" class="col-md-2"></div>
+            <div id="pic18" class="col-md-2"></div>
+        </div>
+    </div>
+    
+    <script>
+        for(var i=0; i<19; i++){
+            $("#pic"+i).css({"background" : "url(img/"+0+".png)", "background-size" : "fill", "background-repeat" : "no-repeat"});
+        }
+
+        $(".col-md-2").click(function(){
+            var random = Math.floor((Math.random() * 9) + 1);
+            $(this).css({"padding": "0px", "background" : "url(img/"+random+".jpg)", "background-size" : "fill", "background-repeat" : "no-repeat"});
+            
+            console.log($(this).index());
+        });
+        /*transform: rotateX(120deg);
+        for(var i=0; i<19; i++){
+            var random = Math.floor((Math.random() * 9) + 1);
+            $("#pic"+i).css({"background" : "url(img/"+random+".jpg)", "background-size" : "cover", "background-repeat" : "no-repeat"});
+        }*/
+    </script>
+
+</body>
+</html>
