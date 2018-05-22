@@ -8,11 +8,22 @@ $(document).ready(function(){
         }
         return array;
     }
-    
+    function sleep(milliseconds) {
+      var start = new Date().getTime();
+      for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds){
+          break;
+        }
+      }
+    }
+
     function memory(clicked, selected, count, array){
-        if(selected == clicked)
+
+        $("#p"+clicked).css('background-color', array[clicked - 1]);
+        if(selected == clicked){
+            $('#p'+clicked).css("background-color", "#6c757d");
             return [selected, count];
-        $("#p"+clicked).css('background-color', array[clicked-1]);
+        }
         if(selected == ""){ //Se for o primeiro da dupla
             return [clicked , count];
         }
@@ -20,12 +31,10 @@ $(document).ready(function(){
             count++;
             if(count == 8)
                 alert("Parabéns você ganhou!");
-            console.log("count")
             return ["", count];
 
         }
         else { //Se voce errar a dupla
-
             $('#p'+selected).css("background-color", "#6c757d");
             $('#p'+clicked).css("background-color", "#6c757d");
 
@@ -35,7 +44,9 @@ $(document).ready(function(){
     }
 
     $("#btn").click(function(){
-
+        for (var i = 1; i < 17; i++){
+            $("#p"+i).css("background-color", "#6c757d");
+        }
 
         var count = 0;
         var selected = "";
@@ -141,6 +152,5 @@ $(document).ready(function(){
 
 
     });
-
 
 });
