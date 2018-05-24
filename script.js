@@ -35,10 +35,13 @@ $(document).ready(function(){
 
         }
         else { //Se voce errar a dupla
-            $('#p'+selected).css("background-color", "#6c757d");
-            $('#p'+clicked).css("background-color", "#6c757d");
-
-            return ["", count];
+            $("#p"+selected)
+                .delay(500)
+                .queue(function() {
+                    $('#p'+selected).css("background-color", "#6c757d").dequeue();
+                    $('#p'+clicked).css("background-color", "#6c757d").dequeue();
+                });
+                return ["", count];
 
         }
     }
