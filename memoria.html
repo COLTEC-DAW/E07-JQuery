@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jogo da Memória</title>
+        <meta charset="utf-8">
+        
+        <!-- importar jquery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        
+        <!-- importar arquivo js -->
+        <script src="memoria.js"></script>
+
+        <!-- importar bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <!-- importar arquivo css -->
+        <link rel="stylesheet" type="text/css" href="memoria.css">
+
+	</head>
+
+	<body>
+        <div class="container">
+            <div class="row">
+
+                <!-- Botao tocar musica -->
+                <div class="col-2">
+                    <audio id="audio">
+                        <source src="musicas/principal.ogg" type="audio/ogg">
+                        <source src="musicas/principal.mp3" type="audio/mpeg">
+                    </audio>
+                    <h1 href="#" onclick="play()">TROCAR MUSICA</h1>      
+                    <script>
+                        audio = document.getElementById('audio');
+                        function play(){
+                            audio.play();
+                        }
+                    </script>
+                </div>
+
+				
+                <!-- Jogo da memoria -->
+                <div class="col-10">
+                    <table>
+                        <tr>
+                            <td class="um padrao"></td>
+                            <td class="dois padrao"></td>
+                            <td class="tres padrao"></td>
+                            <td class="quatro padrao"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="cinco padrao"></td>
+                            <td class="oito padrao"></td>
+                            <td class="quatro padrao"></td>
+                            <td class="tres padrao"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="um padrao"></td>
+                            <td class="seis padrao"></td>
+                            <td class="sete padrao"></td>
+                            <td class="oito padrao"></td>
+                        </tr>
+
+                        <tr>
+                            <td class="cinco padrao"></td>
+                            <td class="sete padrao"></td>
+                            <td class="seis padrao"></td>
+                            <td class="dois padrao"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>
