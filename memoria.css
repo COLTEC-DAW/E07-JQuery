@@ -1,0 +1,18 @@
+/* Definir imagem de fundo */
+body{
+    background-image: url(imagens/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Definir imagem padrao pra quando a carta nao esta virada */
+.padrao {
+    background-image: url(imagens/padrao.png);
+}
+
+/*Estilizar botao tocar musica*/
+h1 {
+    margin-top: 150%;
+    color: blue;
+    text-decoration: underline;
+}
