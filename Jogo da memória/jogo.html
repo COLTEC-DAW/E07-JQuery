@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+        <title>Jogo</title>
+</head>
+<body>
+    
+    <div>
+        <nav class="navbar navbar-dark bg-primary">
+            <h1 class="h3 text-white mx-auto">Os Oito Gigantes - Memory Game</h1>
+        </nav>
+    </div>
+
+    <h3 id="txt_tempo" align="center" class="mt-1"></h3>
+
+    <div class="container mt-3" id="conteudo">
+        <div class="row mt-4">
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="2.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="default.png" class="img-fluid border rounded" width="170" height="200" alt="">
+                <div class="text-white d-flex align-items-center justify-content-center mx-auto h6">Clique para mostrar</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var tempo = 20;
+         
+         function contador(){
+             if(tempo >= 1) {
+                     tempo = tempo - 1;
+                     $("#txt_tempo").html('Você tem ' + tempo + ' segundos para memorizar');
+                     setTimeout('contador()',1000);
+             }
+             else{
+                $("#txt_tempo").hide();
+                depoisContador();
+             }
+         }
+
+        function depoisContador() {
+            $('img').each(function () {
+                $(this).next().css({
+                    "position": "absolute",
+                    "top": "0",
+                    "bottom": "0",
+                    "left": "0",
+                    "right": "0",
+                    "opacity": "1", 
+                    "transition": "2s", 
+                    "background-color": "#008CBA",
+                    "height": "203px",
+                    "width": "170px"}); //efeito css
+            });
+
+            $('img').each(function () {
+                $(this).parent(function () {
+                    $(this).css({
+                        "position": "relative"}); //efeito css
+                });
+            });
+        }
+
+        //gera um vetor com números aleátorios, repetindo cada número duas vezes
+        function geradorDeVetor(tamanho) {
+            var vetor = [];
+            var numero;
+            var verificacao = false;
+            var quantidade;
+
+            for (let i = 0; i < tamanho; i++) {
+                while (verificacao == false) {
+                    quantidade = 0;
+                    numero = (Math.floor((Math.random() * (tamanho/2))) + 1);
+                    for (let j = 0; j < vetor.length; j++) {
+                        if (vetor[j] == numero) {
+                            quantidade++;
+                        }
+                    }
+                    if (quantidade < 2) {
+                        vetor.push(numero);
+                        verificacao = true;
+                    }
+                }
+             verificacao = false;
+            }
+            //gabarito do jogo que aparece no console do navegador #TipsAndTricks
+            console.log("Gabarito: os números iguais correspondem aos pares");
+            console.log(vetor.slice(0, 4));
+            console.log(vetor.slice(4, 8));
+            console.log(vetor.slice(8, 12));
+            console.log(vetor.slice(12, 16));
+            return vetor;
+        }
+
+        $(document).ready(function(){
+
+            contador();
+            var imagens = $('img'); //array com todas as imagens
+            var vetorAleatorio;
+            var imagemClicada = [];
+            var quantidadeClicada = 0;
+            
+            //imagens em posições aleatórias
+            vetorAleatorio = geradorDeVetor(imagens.length);
+            for (let i = 0; i <= imagens.length; i++) {
+                $(imagens[i]).attr("src", (vetorAleatorio[i] +".png"));
+            }
+
+            //revela imagem ao clicar
+            $('img').each(function () {  
+                $(this).next().click(function () {
+                    $(this).fadeTo(1,0);
+
+                    if (($(this).css("opacity")) == "0") {
+                    }
+                    else{
+                        imagemClicada.push($(this).prev().attr("src")); 
+                    }
+                    if (imagemClicada.length == 2) {
+                        if (imagemClicada[0] == imagemClicada[1]) {
+                            imagemClicada = [];
+                            quantidadeClicada = quantidadeClicada + 2;
+
+                            if (quantidadeClicada == 16) { //caso tenha vencido o jogo
+
+                            var div = document.createElement("div");
+                            var attrDiv = document.createAttribute("class");
+                            attrDiv.value = "container mt-5";
+                            div.setAttributeNode(attrDiv);
+
+                            var img = document.createElement("img");
+                            var attrImg = document.createAttribute("src");
+                            attrImg.value = "vencedor.jpg";
+                            img.setAttributeNode(attrImg);
+                            var attrImg = document.createAttribute("class");
+                            attrImg.value = "img-fluid mx-auto d-block";
+                            img.setAttributeNode(attrImg);
+
+                            var btn = document.createElement("button");
+                            var attrButton = document.createAttribute("class");
+                            attrButton.value = "btn btn-success btn-lg row mx-auto d-block mt-3 mb-5";
+                            var texto = document.createTextNode("Jogar Novamente");
+                            btn.setAttributeNode(attrButton);
+                            var attrButton = document.createAttribute("onclick");
+                            attrButton.value = "location.reload(true)";  //reseta o jogo recarregando a página
+                            btn.setAttributeNode(attrButton);
+                            btn.appendChild(texto);
+                            
+                            div.appendChild(img);
+                            div.appendChild(btn);
+
+                            $("#conteudo").replaceWith(div); //troca o jogo pelo novo conteúdo
+
+                            var audio = new Audio('alegria_audio.mp3');
+	                        audio.play();
+                            }
+                        }
+                        else{ //caso perca
+                            var div = document.createElement("div");
+                            var attrDiv = document.createAttribute("class");
+                            attrDiv.value = "container mt-5";
+                            div.setAttributeNode(attrDiv);
+
+                            var img = document.createElement("img");
+                            var attrImg = document.createAttribute("src");
+                            attrImg.value = "errado.png";
+                            img.setAttributeNode(attrImg);
+                            var attrImg = document.createAttribute("class");
+                            attrImg.value = "img-fluid mx-auto d-block";
+                            img.setAttributeNode(attrImg);
+
+                            var btn = document.createElement("button");
+                            var attrButton = document.createAttribute("class");
+                            attrButton.value = "btn btn-success btn-lg row mx-auto d-block mt-3 mb-5";
+                            var texto = document.createTextNode("Tentar Novamente");
+                            btn.setAttributeNode(attrButton);
+                            var attrButton = document.createAttribute("onclick");
+                            attrButton.value = "location.reload(true)";  //reseta o jogo recarregando a página
+                            btn.setAttributeNode(attrButton);
+                            btn.appendChild(texto);
+                            
+                            div.appendChild(img);
+                            div.appendChild(btn);
+
+                            $("#conteudo").replaceWith(div); //troca o jogo pelo novo conteúdo
+
+                            var audio = new Audio('errou_audio.mp3');
+	                        audio.play();
+                        }
+                    }
+                })
+            })
+        });
+    </script>
+</body>
+</html>
