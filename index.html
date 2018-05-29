@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo da Memória</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> <!-- jQuery-->
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <style>
+        .col-md-2{
+            height: 350px;
+            padding: 1%;
+        }
+        .myContainer{
+            padding: 0% 10%; 
+        }
+        .titulo{
+            text-align: center;
+            margin-bottom: 1%;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="titulo">
+        <h1>Jogo da memória do Galão da massa</h1>
+        <button id="start">Começar</button>
+    </div>
+
+    <div class="myContainer">
+        <div class="row">
+            <div id="pic1" class="col-md-2"></div>
+            <div id="pic2" class="col-md-2"></div>
+            <div id="pic3" class="col-md-2"></div>
+            <div id="pic4" class="col-md-2"></div>
+            <div id="pic5" class="col-md-2"></div>
+            <div id="pic6" class="col-md-2"></div>
+        
+            <div id="pic7" class="col-md-2"></div>
+            <div id="pic8" class="col-md-2"></div>
+            <div id="pic9" class="col-md-2"></div>
+            <div id="pic10" class="col-md-2"></div>
+            <div id="pic11" class="col-md-2"></div>
+            <div id="pic12" class="col-md-2"></div>
+        
+            <div id="pic13" class="col-md-2"></div>
+            <div id="pic14" class="col-md-2"></div>
+            <div id="pic15" class="col-md-2"></div>
+            <div id="pic16" class="col-md-2"></div>
+            <div id="pic17" class="col-md-2"></div>
+            <div id="pic18" class="col-md-2"></div>
+        </div>
+    </div>
+    
+    <script>
+        var valor_cartas;
+
+        $("#start").click(function() {
+            valor_cartas = []; // Cada posição representa o jogador selecionado para aquela carta
+            var jogadores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Valores que podem estar nas cartas
+            var cartas = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]; // Array com o numero de Cartas
+
+            while(jogadores.length > 0){
+                /* Duas cartas escolhidas aleatoriamente para formarem um par*/
+                var i = cartas.splice(Math.floor(Math.random() * cartas.length), 1)[0];
+                var j = cartas.splice(Math.floor(Math.random() * cartas.length), 1)[0];
+                /* Vira as cartas sorteadas */
+                $("#pic"+(i+1)).css({"background" : "url(img/0.png)", "background-size" : "fill", "background-repeat" : "no-repeat"});
+                $("#pic"+(j+1)).css({"background" : "url(img/0.png)", "background-size" : "fill", "background-repeat" : "no-repeat"});
+                /* Valor dessas cartas sorteadas é escolhido aleatoriamente */
+                valor_cartas[i] = jogadores.splice(Math.floor(Math.random() * jogadores.length), 1)[0];
+                valor_cartas[j] = valor_cartas[i];
+            }
+
+            $(this).text("Reiniciar");
+        });
+
+        var viradas = 0;
+        var viradaPrimeiro = undefined;
+        var viradaSegundo = undefined;
+        var acertos = 0;
+
+        $(".col-md-2").click(function() {
+        
+        $(this).css({"background" : "url(img/"+valor_cartas[$(this).index()]+".jpg)", "background-size" : "fill", "background-repeat" : "no-repeat"});
+        
+        if (this != viradaPrimeiro){
+        
+        if(viradas == 0){
+            viradaPrimeiro = this;
+            viradas++;
+        }else if(viradas == 1){
+            viradaSegundo = this;        
+            viradas++;
+            if(valor_cartas[$(viradaPrimeiro).index()] != valor_cartas[$(viradaSegundo).index()]){
+                setTimeout(
+                function() {
+                    $(viradaSegundo).css({"background" : "url(img/0.png)", "background-size" : "fill", "background-repeat" : "no-repeat"});
+                    $(viradaPrimeiro).css({"background" : "url(img/0.png)", "background-size" : "fill", "background-repeat" : "no-repeat"});
+                },
+                1000);
+            }else{
+                acertos++;
+                if(acertos == valor_cartas.length/2){
+                    setTimeout(function(){alert('Você ganhou!');}, 1000);
+                    $("#start").text("Jogar de novo");
+                }
+            }
+            viradas = 0;
+            }
+        }
+        });
+
+    </script>
+
+</body>
+</html>
