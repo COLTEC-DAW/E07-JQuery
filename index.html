@@ -14,16 +14,25 @@
 
     <style>
         .col-md-2{
-            height: 300px;
-            padding: 1%
+            height: 350px;
+            padding: 1%;
         }
         .myContainer{
             padding: 0% 10%; 
+        }
+        .titulo{
+            text-align: center;
+            margin-bottom: 1%;
         }
     </style>
 
 </head>
 <body>
+
+    <div class="titulo">
+        <h1>Jogo da memória do Galão da massa</h1>
+        <button id="start">Começar</button>
+    </div>
 
     <div class="myContainer">
         <div class="row">
@@ -33,18 +42,14 @@
             <div id="pic4" class="col-md-2"></div>
             <div id="pic5" class="col-md-2"></div>
             <div id="pic6" class="col-md-2"></div>
-        </div>
         
-        <div class="row">
             <div id="pic7" class="col-md-2"></div>
             <div id="pic8" class="col-md-2"></div>
             <div id="pic9" class="col-md-2"></div>
             <div id="pic10" class="col-md-2"></div>
             <div id="pic11" class="col-md-2"></div>
             <div id="pic12" class="col-md-2"></div>
-        </div>
         
-        <div class="row">
             <div id="pic13" class="col-md-2"></div>
             <div id="pic14" class="col-md-2"></div>
             <div id="pic15" class="col-md-2"></div>
@@ -55,21 +60,64 @@
     </div>
     
     <script>
-        for(var i=0; i<19; i++){
-            $("#pic"+i).css({"background" : "url(img/"+0+".png)", "background-size" : "fill", "background-repeat" : "no-repeat"});
-        }
+        var valor_cartas;
 
-        $(".col-md-2").click(function(){
-            var random = Math.floor((Math.random() * 9) + 1);
-            $(this).css({"padding": "0px", "background" : "url(img/"+random+".jpg)", "background-size" : "fill", "background-repeat" : "no-repeat"});
-            
-            console.log($(this).index());
+        $("#start").click(function() {
+            valor_cartas = []; // Cada posição representa o jogador selecionado para aquela carta
+            var jogadores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // Valores que podem estar nas cartas
+            var cartas = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]; // Array com o numero de Cartas
+
+            while(jogadores.length > 0){
+                /* Duas cartas escolhidas aleatoriamente para formarem um par*/
+                var i = cartas.splice(Math.floor(Math.random() * cartas.length), 1)[0];
+                var j = cartas.splice(Math.floor(Math.random() * cartas.length), 1)[0];
+                /* Vira as cartas sorteadas */
+                $("#pic"+(i+1)).css({"background" : "url(img/0.png)", "background-size" : "fill", "background-repeat" : "no-repeat"});
+                $("#pic"+(j+1)).css({"background" : "url(img/0.png)", "background-size" : "fill", "background-repeat" : "no-repeat"});
+                /* Valor dessas cartas sorteadas é escolhido aleatoriamente */
+                valor_cartas[i] = jogadores.splice(Math.floor(Math.random() * jogadores.length), 1)[0];
+                valor_cartas[j] = valor_cartas[i];
+            }
+
+            $(this).text("Reiniciar");
         });
-        /*transform: rotateX(120deg);
-        for(var i=0; i<19; i++){
-            var random = Math.floor((Math.random() * 9) + 1);
-            $("#pic"+i).css({"background" : "url(img/"+random+".jpg)", "background-size" : "cover", "background-repeat" : "no-repeat"});
-        }*/
+
+        var viradas = 0;
+        var viradaPrimeiro = undefined;
+        var viradaSegundo = undefined;
+        var acertos = 0;
+
+        $(".col-md-2").click(function() {
+        
+        $(this).css({"background" : "url(img/"+valor_cartas[$(this).index()]+".jpg)", "background-size" : "fill", "background-repeat" : "no-repeat"});
+        
+        if (this != viradaPrimeiro){
+        
+        if(viradas == 0){
+            viradaPrimeiro = this;
+            viradas++;
+        }else if(viradas == 1){
+            viradaSegundo = this;        
+            viradas++;
+            if(valor_cartas[$(viradaPrimeiro).index()] != valor_cartas[$(viradaSegundo).index()]){
+                setTimeout(
+                function() {
+                    $(viradaSegundo).css({"background" : "url(img/0.png)", "background-size" : "fill", "background-repeat" : "no-repeat"});
+                    $(viradaPrimeiro).css({"background" : "url(img/0.png)", "background-size" : "fill", "background-repeat" : "no-repeat"});
+                },
+                1000);
+            }else{
+                acertos++;
+                if(acertos == valor_cartas.length/2){
+                    setTimeout(function(){alert('Você ganhou!');}, 1000);
+                    $("#start").text("Jogar de novo");
+                }
+            }
+            viradas = 0;
+            }
+        }
+        });
+
     </script>
 
 </body>
