@@ -7,12 +7,37 @@ function sleep(milliseconds) {
     }
 }
 
+jQuery.fn.extend({
+    disable: function (state) {
+        return this.each(function () {
+            this.disabled = state;
+        });
+    }
+});
+
+
 $(document).ready(function(){
+
+    for(let i=0; i < 16; i++){
+        $("#pic" + i + "-front").css({
+            "background-image" : "url(./assets/images/cards/" + 0 + ".png)", 
+            "background-size" : "cover", 
+            "background-repeat" : "no-repeat",
+            "background-position": "center"
+        });
+    } 
+
+    $("#game").click(function(){
+        StartGame();
+        $(this).disable(true);
+    });
+
     $(".card").click(function(){
         $(this).toggleClass('flipped');
         $(this).css("pointer-events", "none");
+        sleep(250);
         memoryGame(this);
-    });
+    });    
 });
 
 function shuffle(array) {
@@ -47,7 +72,6 @@ function StartGame() {
     arrayShuffled=shuffle(arrayOfImgs);
 
     for(let i=0; i < 16; i++){
-        console.log(arrayShuffled[i]);
         $("#pic" + i + "-back").css({
             "background-image" : "url(./assets/images/cards/" + arrayShuffled[i] + ")", 
             "background-size" : "cover", 
@@ -55,15 +79,6 @@ function StartGame() {
             "background-position": "center"
         });
     }
-
-    for(let i=0; i < 16; i++){
-        $("#pic" + i + "-front").css({
-            "background-image" : "url(./assets/images/cards/" + 0 + ".png)", 
-            "background-size" : "cover", 
-            "background-repeat" : "no-repeat",
-            "background-position": "center"
-        });
-    } 
 }
 
 
@@ -87,39 +102,39 @@ function memoryGame(card) {
     cards.push(card);
     images.push(bi);
 
-    if(cards.length==2) {
-        veryfyingImageIsDouble(bi);
-    }
+    veryfyingImageIsDouble(bi);
 }
 
 function veryfyingImageIsDouble(image) {
-    let count=0;
+    var count=0;
 
-    for (let index = 0; index < array.length; index++) {
-        console.log(array[index]);
-        if(image === array[index]) {
-            count++;
-        }
-    }
-
-    if(count != 2) {
-        console.log(count); 
-        for (let index = 0; index < cards.length; index++) {
-            $(cards[index]).css("pointer-events", "auto");
-            $(cards[index]).toggleClass("flipped");
-        }
-
-        console.log(images.length);
-
-        for (let index = 0; index < images.length; index++) {
-            var indexOfImageInArray = array.indexOf(images[index]);
-            if(index > -1) {
-                array.splice(indexOfImageInArray, 1);
+    if(cards.length === 2) {
+        for (let index = 0; index < array.length; index++) {
+            if(image === array[index]) {
+                count++;
             }
         }
+
+        if(count !== 2) {
+            
+            for (let index = 0; index < cards.length; index++) {
+                console.log(cards[index]);
+                $(cards[index]).css("pointer-events", "auto");
+                $(cards[index]).removeClass("flipped");
+            }
+    
+            for (let index = 0; index < images.length; index++) {
+                var indexOfImageInArray = array.indexOf(images[index]);
+                if(index > -1) {
+                    array.splice(indexOfImageInArray, 1);
+                }
+            }
+        }
+        cards = [];
         images = [];
     }
 
-    count = 0;
-    cards = [];    
+    if (array.length === 16) {
+        alert("Você Ganhou!!!");
+    }
 }
