@@ -1,0 +1,12 @@
+.tile {
+	width: 110px !important;
+	height: 100px !important;
+	margin: 7px !important;
+	padding: 0 !important;
+	cursor: pointer;
+}
+body{
+	background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BTrHt7uCiu335hjs/pixel-art-retro-arcade-game-colorful-animated-blur-background-hd-motion-tetris-style-graphics_hi92bfwpx_thumbnail-full08.png);
+	background-repeat: repeat;
+
+}
