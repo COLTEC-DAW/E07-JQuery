@@ -4,4 +4,5 @@ header{padding: 2px;color: #aa0;background-color: blue;border-radius: 5px;margin
 h2{text-align: center}
 #conteudo{margin-left: 20%;margin-right: 20%}
 .imagem{margin: 0%;padding: 1%;width: 25%;float: left;height: 10vw;}
-img{width: 100%;}
+img{width: 100%;border-radius: 3pt}
+img{filter: brightness(0);}
