@@ -1,0 +1,7 @@
+body{margin: 0px;}
+*{box-sizing: border-box}
+header{padding: 2px;color: #aa0;background-color: blue;border-radius: 5px;margin: 3px; margin-bottom: 20px}
+h2{text-align: center}
+#conteudo{margin-left: 20%;margin-right: 20%}
+.imagem{margin: 0%;padding: 1%;width: 25%;float: left;height: 10vw;}
+img{width: 100%;}
