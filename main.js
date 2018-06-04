@@ -15,13 +15,13 @@ var verificação = function(pE, sE) {
 
 var mostraCor = function(tile) {
 	tile.fadeOut('fast', function () {
-		tile.removeClass('blue-grey')
+		tile.removeClass('black')
 		tile.fadeIn('fast');
 	});
 }
 var escondeCor = function(tile){
 	tile.fadeOut('fast', function () {
-		tile.addClass('blue-grey')
+		tile.addClass('black')
 		tile.hide().fadeIn('fast');
 	});
 }
@@ -31,20 +31,22 @@ var escondeCor = function(tile){
 $(document).ready(function() {
 	$('.tile').click(function() {
 		mostraCor($(this))
-		// o que acontece quando o cara clica 2x na mesma tile?
-		if (!($(this).hasClass('blue-grey'))) {
+		
+		// clica 2x na tile
+		if (!($(this).hasClass('black'))) {
 			// nada
-		} else  { // porém...
+		} 
+			else  {
 			// se ele clica em outra, precisamos tratar isso
-			if (primeiraEscolha == null) { // primeira carta que ele escolher
-				$(this).removeClass('blue-grey')
+			if (primeiraEscolha == null) { 
+				$(this).removeClass('black')
 					primeiraEscolha = {
 					objeto: $(this),
 					classes: $(this).attr("class").split(' ')
 				}
-
+			
 			} else {
-				$(this).removeClass('blue-grey')
+				$(this).removeClass('black')
 				segundaEscolha = {
 					objeto: $(this),
 					classes: $(this).attr("class").split(' ')
