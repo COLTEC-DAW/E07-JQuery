@@ -53,11 +53,11 @@
     var clicks = [];
     $("button").click(function() {
       clicks.push($(this).attr('id'));
-      $(this).css("background-color", sequence[$(this).attr('id')]);
+      $(this).css("background-color", sequence[$(this).attr('id')-1]);
       $(this).addClass("disabled");
       setTimeout(function(){
         if(clicks.length > 1){
-          if(sequence[clicks[0]] != sequence[clicks[1]] || clicks[0] == clicks[1]){
+          if(sequence[clicks[0]-1] != sequence[clicks[1]-1] || clicks[0]-1 == clicks[1]-1){
             $("#" + clicks[0]).css("background-color", "black").removeClass("disabled");
             $("#" + clicks[1]).css("background-color", "black").removeClass("disabled");
           }
