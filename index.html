@@ -37,7 +37,7 @@
     var sequence = [];
     $(document).ready(function(){
       var colors = ["red", "green", "blue", "yellow", "purple", "gray", "aqua", "pink", "red", "green", "blue", "yellow", "purple", "gray", "aqua", "pink"];
-      while(colors.length > 0) {
+      while(colors.length -1 > 0) {
         i = Math.floor(Math.random() * colors.length);
         sequence.push(colors[i]);
         colors.splice(i,1);
@@ -52,7 +52,7 @@
       $(this).css("background-color", sequence[$(this).attr('id')]);
       $(this).addClass("disabled");
       setTimeout(function(){
-        if(clicks.length -1 > 1){
+        if(clicks.length > 1){
           if(sequence[clicks[0]] != sequence[clicks[1]] || clicks[0] == clicks[1]){
             $("#" + clicks[0]).css("background-color", "black").removeClass("disabled");
             $("#" + clicks[1]).css("background-color", "black").removeClass("disabled");
