@@ -1,0 +1,19 @@
+.geral{
+    align-self: center;
+    height: 200px;
+    width: 200px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+nav{
+    background-color: brown;
+    height: 100px;
+}
+
+h1{
+    text-align: center;
+    padding: 15px;
+}
