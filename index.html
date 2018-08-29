@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>E07</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="row">
+      <button id="1" class="btn col-2 offset-2 img-thumbnail" style="height: 200px;"></button>
+      <button id="2" class="btn col-2 img-thumbnail" style="height: 200px;"></button>
+      <button id="3" class="btn col-2 img-thumbnail" style="height: 200px;"></button>
+      <button id="4" class="btn col-2 img-thumbnail" style="height: 200px;"></button>
+    </div>
+    <div class="row">
+      <button id="5" class="btn col-2 offset-2 img-thumbnail" style="height: 200px;"></button>
+      <button id="6" class="btn col-2 img-thumbnail" style="height: 200px;"></button>
+      <button id="7" class="btn col-2 img-thumbnail" style="height: 200px;"></button>
+      <button id="8" class="btn col-2 img-thumbnail" style="height: 200px;"></button>
+    </div>
+    <div class="row">
+      <button id="9" class="btn col-2 offset-2 img-thumbnail" style="height: 200px;"></button>
+      <button id="10" class="btn col-2 img-thumbnail" style="height: 200px;"></button>
+      <button id="11" class="btn col-2 img-thumbnail" style="height: 200px;"></button>
+      <button id="12" class="btn col-2 img-thumbnail" style="height: 200px;"></button>
+    </div>
+    <div class="row">
+      <button id="13" class="btn col-2 offset-2 img-thumbnail" style="height: 200px;"></button>
+      <button id="14" class="btn col-2 img-thumbnail" style="height: 200px;"></button>
+      <button id="15" class="btn col-2 img-thumbnail" style="height: 200px;"></button>
+      <button id="16" class="btn col-2 img-thumbnail" style="height: 200px;"></button>
+    </div>
+
+    <script>
+    var sequence = [];
+    $(document).ready(function(){
+      var colors = ["red", "green", "blue", "yellow", "purple", "gray", "aqua", "pink", "red", "green", "blue", "yellow", "purple", "gray", "aqua", "pink"];
+      while(colors.length > 0) {
+        if(colors.length == 1) {
+          sequence.push(colors[0]);
+          break;
+        }
+        i = Math.floor(Math.random() * colors.length);
+        sequence.push(colors[i]);
+        colors.splice(i,1);
+      }
+      for(j = 1; j < 17; j++) {
+        $("button").css("background-color", "black");
+      }
+    });
+    var clicks = [];
+    $("button").click(function() {
+      clicks.push($(this).attr('id'));
+      $(this).css("background-color", sequence[$(this).attr('id')-1]);
+      $(this).addClass("disabled");
+      setTimeout(function(){
+        if(clicks.length > 1){
+          if(sequence[clicks[0]-1] != sequence[clicks[1]-1] || clicks[0]-1 == clicks[1]-1){
+            $("#" + clicks[0]).css("background-color", "black").removeClass("disabled");
+            $("#" + clicks[1]).css("background-color", "black").removeClass("disabled");
+          }
+          clicks = [];
+        }
+      }, 1000);
+    });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+</html>
