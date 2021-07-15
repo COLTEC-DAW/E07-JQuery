@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memory game</title>
+
+        <!-- Estilo do jogo -->
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <!-- Parte superior -->
+        <div>
+            <h1 id="TituloGeral"> Jogo da memória - Versão do programador </h1>
+            <p>Jogo: Encontre os cartões iguais para marcar pontos e complete o tabuleiro para ganhar o jogo!</p>
+        </div>
+
+        <!-- Tabuleiro 4 x 4 -->
+        <div class="Tabuleiro">
+            <div class="card" onclick="CardClick(this)"><!-- Linha 01, coluna 01 --> <img src=""></div>
+            <div class="card" onclick="CardClick(this)"><!-- Linha 01, coluna 02 --> <img src=""></div>
+            <div class="card" onclick="CardClick(this)"><!-- Linha 01, coluna 03 --> <img src=""></div>
+            <div class="card" onclick="CardClick(this)"><!-- Linha 01, coluna 04 --> <img src=""></div>
+
+            <div class="card" onclick="CardClick(this)"><!-- Linha 02, coluna 01 --> <img src=""></div>
+            <div class="card" onclick="CardClick(this)"><!-- Linha 02, coluna 02 --> <img src=""></div>
+            <div class="card" onclick="CardClick(this)"><!-- Linha 02, coluna 03 --> <img src=""></div>
+            <div class="card" onclick="CardClick(this)"><!-- Linha 02, coluna 04 --> <img src=""></div>
+
+            <div class="card" onclick="CardClick(this)"><!-- Linha 03, coluna 01 --> <img src=""></div>
+            <div class="card" onclick="CardClick(this)"><!-- Linha 03, coluna 02 --> <img src=""></div>
+            <div class="card" onclick="CardClick(this)"><!-- Linha 03, coluna 03 --> <img src=""></div>
+            <div class="card" onclick="CardClick(this)"><!-- Linha 03, coluna 04 --> <img src=""></div>
+            
+            <div class="card" onclick="CardClick(this)"><!-- Linha 04, coluna 01 --> <img src=""></div>
+            <div class="card" onclick="CardClick(this)"><!-- Linha 04, coluna 02 --> <img src=""></div>
+            <div class="card" onclick="CardClick(this)"><!-- Linha 04, coluna 03 --> <img src=""></div>
+            <div class="card" onclick="CardClick(this)"><!-- Linha 04, coluna 04 --> <img src=""></div>
+        </div>
+        <div class="Menu">
+            <h4 id="MenuTitle">Menu:</h4>
+            <p>Aqui você poderá acompanhar sua pontuação, seus erros, iniciar ou reiniciar o jogo.</p>
+
+            <div class="Info" id="Pontos">Pontuação: 0</div>
+            <div class="Info" id="Erros">Erros: 0</div>
+
+            <button id="botao1" name="play" type="button" onClick="StartGame()">Iniciar</button>
+            <button id="botao2" name="reset" type="button" onClick="RestarGame()">Reiniciar</button>
+        </div>
+
+        <!-- Parte inferior -->
+        <!--<footer>
+            Desenvolvimento de Aplicações Web - COLTEC/UFMG</br>
+            Esta página foi estilizada por <a href="http://www.linkedin.com/in/erik-neves" target="_blank">Erik Neves.</a></br>
+        </footer> -->
+
+        <!-- Funcionalidade -->
+        <script src="./script.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </body>
+</html>
