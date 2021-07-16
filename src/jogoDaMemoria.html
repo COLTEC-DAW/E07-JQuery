@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="estilouso.css" media="screen" />
+
+        <script>
+
+            var previousSource = null;
+            var previousThis = null;
+            var currentSource = null;
+            var currentThis = null;
+            var revealed = 0;
+
+            $(document).ready(function(){
+
+                var move = 1;
+                
+                $(".card1, .card2, .card3, .card4, .card5, .card6, .card7, .card8").click(function(){
+
+                    $(this).find("img").hide();
+                    console.log(move);
+
+                    if(move >= 2){
+
+                        if( $(this).css("background-image") != previousSource ){
+                            
+                            $(this).find("img").delay(1000).fadeIn();
+                            $(previousThis).find("img").delay(1000).fadeIn();
+
+                        }
+                        else {
+                            revealed = revealed + 2;
+                        }
+
+                        move = 1;
+                        console.log(move);
+                    }
+                    else if (move == 1){
+                        
+                        previousThis = this;
+                        previousSource = $(this).css("background-image");
+                        move++;
+                    }
+
+                    if(revealed >= 16){
+                        alert("PARABENS VOCE GANHOU!!!1!!11");
+                    }
+                })
+            })
+            
+        </script>
+
+    </head>
+    <body>
+
+        <h1>BEM VINDO AO JOGO DA MEMÓRIA</h1>
+
+        <div class="conteudo">
+
+
+            <div class="card7">
+
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+            </div>
+            <div class="card5">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+            <div class="card6">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+            <div class="card8">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+
+            <div class="card2">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+            <div class="card2">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+            <div class="card3">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+            <div class="card1">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+
+
+            <div class="card7">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+            <div class="card6">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+            <div class="card1">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+            <div class="card4">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+            <div class="card3">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+            <div class="card4">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+            <div class="card5">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+            <div class="card8">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.BDAElFaKlmicadqn9jQLcQHaHa&pid=Api">
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
