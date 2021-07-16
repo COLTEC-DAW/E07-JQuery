@@ -10,7 +10,7 @@ const DefaultPath = "./Icones/Icon_";
 
 // Configuração dos temporizadores
 const ImagensDisponiveis = 3800; // milisegundos
-const TempoRestart = 1200;       // milisegundos
+const TempoRestart = 750;       // milisegundos
 
 // Configurações do jogo
 var Pontos = 0;
@@ -97,7 +97,6 @@ function RestarGame(){
 
 // Clique em um card
 function CardClick(card){
-
     if(Selected_01.card == card && Selected_01.card != null) return;
     if(ClickBlock) return;
     if(!EmCurso){
@@ -113,12 +112,11 @@ function CardClick(card){
 
     Select(card,index);
 
-    if(Selected_02.card != null) CheckPair();
-
+    if(Selected_02.card != null) CheckPair(index);
 }
 
 // Confere o par de cartões
-function CheckPair(){
+function CheckPair(index){
     if(Selected_01.img.src == Selected_02.img.src){
         Scored();
     }else if(Selected_01.card != null && Selected_02.card != null){

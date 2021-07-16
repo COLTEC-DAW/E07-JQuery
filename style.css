@@ -14,51 +14,47 @@ body{
 }
 
 footer{
-    border: 10px solid;
     font-size:0.7em;
 }
 
 .Tabuleiro{
     background-color: lavender;
-    width: 60%;
-    margin-left: 10%;
+    /*width: 60%;
+    margin-left: 10%;*/
 
-    border: 10px solid;
     overflow: hidden;
+    border: 10px solid;
+    border-radius: 25px;
     float: left;
-    align-items: center;
+    
 }
 
 .card{
     background-color: #F1C4FF;
     border: 2px solid;
     border-radius: 15px;
-
-    margin-left: 3.4%;
-    margin-right: 3.4%;
-    
     float: left;
+    
+    align-items: center;
     width: 160px;
     height: 160px;
+    margin-left: 4%;
+    margin-right: 4%;
 }
 
 img{
-    width: 160px;
-    height: 160;
+    width: 135px;
+    height: 135px;
     display: block;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    padding-top: auto;
-    padding-bottom: auto;
+    align-items: center;
+    margin-top:auto;
+    margin-bottom: auto;;
 }
 
 .Menu{
-    border: 10px solid;
+    border: 3px solid;
+    border-radius: 25px;
     float: left;
-
-    width: 20%;
 }
 
 #MenuTitle{
@@ -75,7 +71,5 @@ img{
 }
 
 button{
-    font-size: 18px;
-    margin-left:15%;
-    float:left;
+   
 }
