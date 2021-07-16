@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&display=swap");
+@-webkit-keyframes BorderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes BorderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes BorderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes CardMatched {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.95, 1.15);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes CardUnmatched {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+html {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 18px !important;
+  font-family: "Josefin Sans", sans-serif !important;
+  color: black;
+}
+
+body {
+  font-size: 18px;
+  background-image: url("background.png");
+  background-repeat: repeat;
+  background-position: center center;
+}
+
+header {
+  position: sticky;
+  width: 100%;
+  padding-top: 1vh;
+}
+header h1 {
+  font-size: 3rem;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 300;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.inline, #memory-game .stats, #memory-game .config {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#memory-game {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to left top, #7878ff, #4133be);
+  max-width: 540px;
+  margin: auto;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+  background-clip: padding-box;
+  border: solid 6px transparent;
+  box-sizing: border-box;
+}
+#memory-game:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -6px;
+  border-radius: inherit;
+  background: linear-gradient(312deg, #ff00c2 0%, #d600ff 50%, #ff00a4 100%);
+  background-position: 100% 100%;
+}
+#memory-game:before {
+  -webkit-animation: BorderAnimation 5s ease infinite;
+  -moz-animation: BorderAnimation 5s ease infinite;
+  -ms-animation: BorderAnimation 5s ease infinite;
+  animation: BorderAnimation 5s ease infinite;
+}
+#memory-game .config {
+  margin-top: 2vh;
+}
+#memory-game .config button {
+  background-color: #fff;
+  outline: none;
+  border: 0;
+  overflow: hidden;
+  cursor: pointer;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+}
+#memory-game .config button p {
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+}
+#memory-game .deck {
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(4, 7rem);
+  gap: 1.4rem 0px;
+  perspective: 800px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 0px;
+}
+#memory-game .deck .card {
+  height: 5rem;
+  width: 5rem;
+  margin: 0.2rem 0.2rem;
+  background: white;
+  cursor: pointer;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 10px 0 rgba(46, 61, 73, 0.5);
+  transform: scale(1) rotateY(180deg);
+  transform-style: preserve-3d;
+  font-size: 0px;
+  -webkit-transition: transform 0.5s ease-in-out, font-size 0.2s;
+  -moz-transition: transform 0.5s ease-in-out, font-size 0.2s;
+  -ms-transition: transform 0.5s ease-in-out, font-size 0.2s;
+  transition: transform 0.5s ease-in-out, font-size 0.2s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+}
+#memory-game .deck .card.open {
+  font-size: 20px;
+  transform: scale(0.95) rotateY(0deg);
+  background-color: cyan;
+  color: #ff03ab;
+  -webkit-transition: transform 0.3s ease-in-out, font-size 0.2s;
+  -moz-transition: transform 0.3s ease-in-out, font-size 0.2s;
+  -ms-transition: transform 0.3s ease-in-out, font-size 0.2s;
+  transition: transform 0.3s ease-in-out, font-size 0.2s;
+}
+#memory-game .deck .card.different {
+  background-color: #ff5050;
+  color: white;
+  -webkit-animation: CardUnmatched 0.4s cubic-bezier(0.07, 0.77, 0.55, 0.8);
+  -moz-animation: CardUnmatched 0.4s cubic-bezier(0.07, 0.77, 0.55, 0.8);
+  -ms-animation: CardUnmatched 0.4s cubic-bezier(0.07, 0.77, 0.55, 0.8);
+  animation: CardUnmatched 0.4s cubic-bezier(0.07, 0.77, 0.55, 0.8);
+}
+#memory-game .deck .card.equal {
+  background-color: #99ff99;
+  color: white;
+  -webkit-animation: CardMatched 0.4s;
+  -moz-animation: CardMatched 0.4s;
+  -ms-animation: CardMatched 0.4s;
+  animation: CardMatched 0.4s;
+}
+#memory-game .deck .card.disabled {
+  pointer-events: none;
+}
+#memory-game .stats p[data-count]::after {
+  content: attr(data-count);
+}

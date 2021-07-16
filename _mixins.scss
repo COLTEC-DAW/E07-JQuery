@@ -1,0 +1,37 @@
+@mixin transition($transitions...) {
+    -webkit-transition: $transitions;
+    -moz-transition: $transitions;
+    -ms-transition: $transitions;
+    transition: $transitions; 
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin animation($animations...) {
+    -webkit-animation: $animations;
+    -moz-animation: $animations;
+    -ms-animation: $animations;
+    animation: $animations; 
+}
+
+@mixin gradient-border($border, $gradient){
+    background-clip: padding-box;
+    border: solid $border transparent;
+    box-sizing: border-box;
+
+    &:before{
+        content: "";
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -$border; 
+        border-radius: inherit;
+        background: $gradient;
+        background-position: 100% 100%;
+    }
+}
