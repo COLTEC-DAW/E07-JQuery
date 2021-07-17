@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+    <link rel="stylesheet" href="/Css.css">
+    <title>JOgodaVelha</title>
+</head>
+<body>
+    <div id= "DivMae">
+        <div id = 'divP1' class="ClassXorO">
+        </div>
+        <div id = 'divP2' class="ClassXorO">
+        </div>
+        <div id = 'divP3' class="ClassXorO">
+        </div>
+        <div id = 'divP4' class="ClassXorO">
+        </div>        
+        <div id = 'divP5' class="ClassXorO">
+        </div>        
+        <div id = 'divP6' class="ClassXorO">
+        </div>
+        <div id = 'divP7' class="ClassXorO">
+        </div>
+        <div id = 'divP8' class="ClassXorO">
+        </div>
+        <div id = 'divP9' class="ClassXorO">
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var vezDoJogador = 1;
+            var valores = ['','','','','','','','','']; //salva os valores das divs para verificar quem ganhou
+            $('.ClassXorO').click(function(){
+                if(vezDoJogador == 1){
+                    $(this).css('background-image','url('+'/X.png'+')');
+                    $(this).off('click');
+                    valores[Number(this.id[4])-1] = 'x'; //pega o numero da div e coloca na posição correspondente do vetor
+                    verificaVitoria(valores);
+                    vezDoJogador = 2;
+                }else if(vezDoJogador == 2){
+                    $(this).css('background-image','url('+'/O.png'+')');
+                    $(this).off('click');
+                    valores[Number(this.id[4])-1] = 'o';
+                    verificaVitoria(valores);
+                    vezDoJogador = 1;
+                }
+            });
+            });
+
+            function verificaVitoria(valores){
+            //Verifica se ganhou na horizontal
+                for(i=0;i < valores.length;i+=3){
+                if(iguais(valores[i],valores[i+1],valores[i+2])){
+                    verificaJogadorGanhador(valores[i]);
+                }
+            }
+            //Verifica se ganhou na vertical
+            for(i=0;i < valores.length;i++){
+                if(iguais(valores[i],valores[i+3],valores[i+6])){
+                    verificaJogadorGanhador(valores[i]);
+                }
+            }
+            
+            if(iguais(valores[0],valores[4],valores[8])){
+                verificaJogadorGanhador(valores[0]);  
+            }else if(iguais(valores[2],valores[4],valores[6])){
+                verificaJogadorGanhador(valores[2]);  
+            }
+            }
+
+            function iguais(elemento1,elemento2,elemento3){
+                if(elemento1 == elemento2 && elemento2 == elemento3){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            function verificaJogadorGanhador(valor){
+                if(valor == 'x'){
+                        window.alert('Jogador 1 wins');
+                        setTimeout(reload,500);
+                    }else if(valor == 'o') {
+                        window.alert('Jogador 2 wins');
+                        setTimeout(reload,500);
+                    }
+                    else{
+                    }
+            }
+
+            function reload(){
+                window.location.reload();
+            }
+    </script>
+</body>
+</html>

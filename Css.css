@@ -1,0 +1,84 @@
+div#DivMae
+    
+{
+    background-color: red;
+    width: 40%;
+    height: 600px;
+    min-height: 500px;
+    min-width: 600px;
+    background-image: url('/Tabuleiro\ Jogo\ da\ velha.jpg');
+    margin-left: 25%;
+}
+.clasXorO{
+
+}
+.class{
+    
+}
+div#divP1{
+    width: 16.50%;
+    height: 16.50%;
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 8%;
+}
+div#divP2{
+    width: 16.50%;
+    height: 16.50%;
+    display: inline-block;
+    margin-left: 15%;
+    margin-top: 8%;
+}
+div#divP3{
+    width: 16.50%;
+    height: 16.50%;
+    display: inline-block;
+    margin-left: 15%;
+    margin-top: 8%;
+}
+div#divP4{
+    width: 16.50%;
+    height: 16.50%;
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 8%;
+}
+div#divP5{
+    width: 16.50%;
+    height: 16.50%;
+    display: inline-block;
+    margin-left: 15%;
+    margin-top: 16%;
+}
+div#divP6{
+    width: 16.50%;
+    height: 16.50%;
+    display: inline-block;
+    margin-left: 15%;
+    margin-top: 16%;
+}
+div#divP7{
+    width: 16.50%;
+    height: 16.50%;
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 20%;
+}
+div#divP8{
+    width: 16.50%;
+    height: 16.50%;
+    display: inline-block;
+    margin-left: 15%;
+    margin-top: 16%;
+}
+div#divP9{
+    width: 16.50%;
+    height: 16.50%;
+    display: inline-block;
+    margin-left: 15%;
+    margin-top: 16%;
+}
+
+body{
+    background-color:  #161616;
+}
