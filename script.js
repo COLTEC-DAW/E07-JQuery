@@ -10,7 +10,7 @@ const DefaultPath = "./Icones/Icon_";
 
 // Configuração dos temporizadores
 const ImagensDisponiveis = 3800; // milisegundos
-const TempoRestart = 750;       // milisegundos
+const TempoRestart = 750;        // milisegundos
 
 // Configurações do jogo
 var Pontos = 0;
@@ -53,7 +53,7 @@ function DefinePositions(){
 
         if(check.indexOf(false) == -1) validate = false;
     }
-
+    
     return pos;
 }
 
@@ -61,15 +61,15 @@ function DefinePositions(){
 function ShowAllImages(){
     for(var i=0;i<16;i++) {
         ImagesTag[i].src = DefaultPath + Images[Positions[i]]; 
-        //CardsTag[i].style.backgroundColor = "#FFFFFF";
+        CardsTag[i].style.backgroundColor = "#F1C4FF";
     } 
 }
 
 // Oculta todas as imagens no mesmo instante
 function HideAllImages(){ 
     for(var i=0;i<16;i++) {
-        ImagesTag[i].src = "";
-        //CardsTag[i].style.backgroundColor = "#F1C4FF"
+        ImagesTag[i].src = "./Icones/Icon_back.png";
+        CardsTag[i].style.backgroundColor = "#B5B5FD";
     }
 }
 
@@ -112,15 +112,15 @@ function CardClick(card){
 
     Select(card,index);
 
-    if(Selected_02.card != null) CheckPair(index);
+    if(Selected_02.card != null) CheckPair();
 }
 
 // Confere o par de cartões
-function CheckPair(index){
+function CheckPair(){
     if(Selected_01.img.src == Selected_02.img.src){
         Scored();
     }else if(Selected_01.card != null && Selected_02.card != null){
-        Failed(index); 
+        Failed(); 
     }
 
     UpdatePoints();
@@ -148,7 +148,7 @@ function ClearSelected(){
 // Seleciona um card
 function Select(card, index){
     ImagesTag[index].src = DefaultPath + Images[Positions[index]];
-    //CardsTag[index].style.backgroundColor = "#FFFFFF";
+    CardsTag[index].style.backgroundColor = "#F1C4FF";
 
     if(Selected_01.card == null){
         Selected_01.card = card;
@@ -169,19 +169,17 @@ function Scored(){
 }
 
 // Combinação incorreta de cards
-function Failed(index){
+function Failed(){
     ClickBlock = true;  
     setTimeout(function(){
-        ImagesTag[index].src = "";
-
         if(Selected_01.img != null) {
-            Selected_01.img.src = "";
-            Selected_02.img.src = "";
-            //CardsTag[Selected_01.imgIndex].style.backgroundColor = "#F1C4FF";
-            //CardsTag[Selected_02.imgIndex].style.backgroundColor = "#F1C4FF";
+            Selected_01.img.src = "./Icones/Icon_back.png";
+            Selected_01.card.style.backgroundColor = "#B5B5FD";
+            Selected_02.img.src = "./Icones/Icon_back.png";
+            Selected_02.card.style.backgroundColor = "#B5B5FD";
+
             ClearSelected();
         }
-
         ClickBlock = false;
     },TempoRestart);
         

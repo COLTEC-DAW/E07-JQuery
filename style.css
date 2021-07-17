@@ -9,28 +9,21 @@ body{
     text-shadow: 5px 5px 5px #FF0000;
     font-size: 2.8em;
 }
-#TituloGeral + p{
-    text-align: left;    
-}
+#TituloGeral + p{ text-align: left; }
 
-footer{
-    font-size:0.7em;
-}
+footer{ font-size:0.7em; }
 
 .Tabuleiro{
-    background-color: lavender;
-    /*width: 60%;
-    margin-left: 10%;*/
+    background-color: #B5B5FD;
 
     overflow: hidden;
     border: 10px solid;
     border-radius: 25px;
     float: left;
-    
 }
 
 .card{
-    background-color: #F1C4FF;
+    background-color: #B5B5FD;
     border: 2px solid;
     border-radius: 15px;
     float: left;
@@ -45,10 +38,10 @@ footer{
 img{
     width: 135px;
     height: 135px;
-    display: block;
+    
     align-items: center;
     margin-top:auto;
-    margin-bottom: auto;;
+    margin-bottom: auto;
 }
 
 .Menu{
@@ -60,16 +53,10 @@ img{
 #MenuTitle{
     text-align: center;
     text-shadow: 2px 2px 2px greenyellow;
-    font-size: 1em;
 }
 #MenuTitle + p{
     text-align: left;
     text-align: justify;    
 }
-.Info{
-    margin-left:5%;
-}
-
-button{
-   
-}
+.Info{margin-left:5%; }
+#botao1, #botao2{ margin-left: 20%; }
