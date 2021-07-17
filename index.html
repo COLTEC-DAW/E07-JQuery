@@ -13,46 +13,50 @@
         <!-- Parte superior -->
         <div>
             <h1 id="TituloGeral"> Jogo da memória - Versão do programador </h1>
-            <p>Jogo: Encontre os cartões iguais para marcar pontos e complete o tabuleiro para ganhar o jogo!</p>
+            <p>Encontre os cartões iguais para marcar pontos e complete o tabuleiro para ganhar o jogo!</p>
         </div>
 
         <!-- Tabuleiro 4 x 4 -->
         <div class="container">
             <div class="Tabuleiro col-8">
                 <div class="container">
+                    <!-- Linha 01 -->
                     <div class="row">
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 01, coluna 01 --> <img src="./Icones/Icon_back.png"></div>
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 01, coluna 02 --> <img src="./Icones/Icon_back.png"></div>
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 01, coluna 03 --> <img src="./Icones/Icon_back.png"></div>
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 01, coluna 04 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 01 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 02 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 03 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 04 --> <img src="./Icones/Icon_back.png"></div>
                     </div>
                     
+                    <!-- Linha 02 -->
                     <div class="row">
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 02, coluna 01 --> <img src="./Icones/Icon_back.png"></div>
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 02, coluna 02 --> <img src="./Icones/Icon_back.png"></div>
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 02, coluna 03 --> <img src="./Icones/Icon_back.png"></div>
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 02, coluna 04 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 01 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 02 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 03 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 04 --> <img src="./Icones/Icon_back.png"></div>
                     </div>
                     
+                    <!-- Linha 03 -->
                     <div class="row">
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 03, coluna 01 --> <img src="./Icones/Icon_back.png"></div>
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 03, coluna 02 --> <img src="./Icones/Icon_back.png"></div>
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 03, coluna 03 --> <img src="./Icones/Icon_back.png"></div>
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 03, coluna 04 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 01 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 02 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 03 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 04 --> <img src="./Icones/Icon_back.png"></div>
                     </div>
-    
+                    
+                    <!-- Linha 04 -->
                     <div class="row">
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 04, coluna 01 --> <img src="./Icones/Icon_back.png"></div>
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 04, coluna 02 --> <img src="./Icones/Icon_back.png"></div>
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 04, coluna 03 --> <img src="./Icones/Icon_back.png"></div>
-                        <div class="card col-2" onclick="CardClick(this)"><!-- Linha 04, coluna 04 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 01 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 02 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 03 --> <img src="./Icones/Icon_back.png"></div>
+                        <div class="card col-2"><!-- Coluna 04 --> <img src="./Icones/Icon_back.png"></div>
                     </div>
                 </div>
             </div>
                  
             <div class="Menu col-4">
                 <h4 id="MenuTitle">Menu:</h4>
-                <p>Aqui você poderá acompanhar sua pontuação, seus erros, iniciar ou reiniciar o jogo.</p>
+                <p>Aqui você poderá acompanhar sua pontuação, seus erros e começar/recomeçar o jogo.</p>
 
                 <div class="Info" id="Pontos">Pontuação: 0</div>
                 <div class="Info" id="Erros">Erros: 0</div>
@@ -64,12 +68,12 @@
             <!-- Parte inferior -->
             <footer class="row col-12">
                 Desenvolvimento de Aplicações Web - COLTEC/UFMG</br>
-                Esta página foi desenvolvida por Erik Neves.</br>
+                Este mini-game foi desenvolvido por Erik Neves.</br>
             </footer>
         </div>
 
         <!-- Funcionalidade -->
-        <script src="./script.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="./script.js"></script>
     </body>
 </html>

@@ -1,8 +1,8 @@
 // Acesso aos elementos do HTML
-const ImagesTag = document.body.getElementsByTagName("img");
-const CardsTag = document.body.getElementsByClassName("card");
-const PontosTXT = document.getElementById("Pontos");
-const ErrosTXT = document.getElementById("Erros");
+const ImagesTag = $("img");
+const CardsTag  = $(".card");
+const PontosTXT = $("#Pontos")[0];
+const ErrosTXT  = $("#Erros")[0];
 
 // Nome & caminho padrão das imagens
 const Images = ["csharp.png","css.png","html.png","java.png","mysql.png","php.png","python.png","js.png"];
@@ -17,11 +17,15 @@ var Pontos = 0;
 var Erros = 0;
 var EmCurso = false;
 var ClickBlock = false;
+var win = false;
 
 var Positions = null;
 var Selected_01 = { card: null, img: null, imgIndex: -1 };
 var Selected_02 = { card: null, img: null, imgIndex: -1 };
 var ParEncontrado = [false,false,false,false,false,false,false,false];
+
+for(var i=0;i<16;i++) { CardsTag[i].style.backgroundColor = "#B5B5FD"; } 
+$(".card").click(CardClick);
 
 // Restaurar variaveis
 function RestartData(){
@@ -53,7 +57,7 @@ function DefinePositions(){
 
         if(check.indexOf(false) == -1) validate = false;
     }
-    
+
     return pos;
 }
 
@@ -76,7 +80,7 @@ function HideAllImages(){
 // Inicia o jogo e realiza as configurações iniciais
 function StartGame(){
     if(EmCurso){
-        alert("O Jogo ja foi iniciado!\nUtilize o botão Reiniciar!");
+        alert("Utilize o botão Reiniciar para recomeçar!");
         return;
     }
 
@@ -96,8 +100,8 @@ function RestarGame(){
 }
 
 // Clique em um card
-function CardClick(card){
-    if(Selected_01.card == card && Selected_01.card != null) return;
+function CardClick(){
+    if(Selected_01.card == this && Selected_01.card != null) return;
     if(ClickBlock) return;
     if(!EmCurso){
         alert("Aperte o botão iniciar primeiro!");
@@ -105,12 +109,12 @@ function CardClick(card){
     }
     
     var index = -1;
-    for(var i=0;i<16;i++) if(card === CardsTag[i]) index = i;
+    for(var i=0;i<16;i++) if(this === CardsTag[i]) index = i;
     if(index == -1) return;
 
     if(ParEncontrado[Positions[index]]) return; 
 
-    Select(card,index);
+    Select(this,index);
 
     if(Selected_02.card != null) CheckPair();
 }
@@ -127,7 +131,7 @@ function CheckPair(){
 
     if(ParEncontrado.indexOf(false) == -1){
         setTimeout(function(){
-            alert("Você venceu");
+            alert("Você venceu!!!");
         },100);
     }
 
