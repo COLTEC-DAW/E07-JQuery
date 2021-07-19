@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Jogo da Memória</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="cards">
+            <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: white;">
+                ggwp.
+            </h1>
+
+        </div>
+    </div>
+
+    <script>
+        function removeRandomFromArray(array) {
+            var removedItem = array[Math.floor(Math.random() * array.length)];
+            array.splice(array.indexOf(removedItem), 1);
+            return removedItem;
+        }
+
+        $(document).ready(function () {
+            $("h1").hide().css("color", "royalblue");
+
+            const pair = 2;
+            const nMatches = 8;
+            const nElements = nMatches * pair;
+
+            const colorsArray =
+                ["cyan", "blueviolet", "crimson", "forestgreen", "wheat",
+                    "lightgreen", "orangered", "pink", "brown", "royalblue"];
+
+            var elements = [];
+            var cardColor = null;
+            var availableColors = [];
+            for (var i = 0; i < colorsArray.length; i++) {
+                availableColors.push(colorsArray[i]);
+            }
+            for (var i = 0; i < nMatches; i++) {
+
+                cardColor = removeRandomFromArray(availableColors);
+                for (var j = 0; j < pair; j++) {
+                    var newCard = document.createElement("div");
+
+
+                    var cardClasses = document.createAttribute("class");
+                    cardClasses.value += "card ";
+                    cardClasses.value += cardColor;
+                    newCard.setAttributeNode(cardClasses);
+
+                    elements.push(newCard);
+                }
+            }
+            while (elements.length > 0) {
+                $("#cards").append(removeRandomFromArray(elements));
+            }
+
+            $(".card").css({
+                "float": "left",
+                "margin": "2%",
+                "width": "21%"
+            })
+                .append(document.createElement("div"))
+                .children().addClass("front")
+                .after(document.createElement("div"))
+                .siblings().addClass("back");
+
+            $(".card").children(".back")
+                .css("background-color", "gray");
+
+            for (var i = 0; i < colorsArray.length; i++) {
+                $("." + colorsArray[i]).children(".front")
+                    .css("background-color", colorsArray[i]);
+
+            }
+
+            $(window).resize(function () {
+                var windowHeight = $(this).height();
+                var windowWidth = $(this).width();
+                var padding = ((windowWidth - windowHeight) / 2);
+
+                $(".container").css({ "padding-left": padding, "padding-right": padding });
+                $(".card").height($(".card").width());
+            }).resize();
+
+            $(".front, .back").css({
+                "float": "left",
+                "margin": "7.5%",
+                "width": "85%",
+                "height": "85%"
+            })
+
+            $(".front").hide();
+
+            $(".card").hover(function () {
+                if (!($(this).hasClass("flipped")) && !($(this).hasClass("matched"))) {
+                    $(this).children().animate({
+                        "margin": "5%",
+                        "width": "90%",
+                        "height": "90%"
+                    }, {
+                        "duration": 100,
+                        "queue": false
+                    })
+                }
+            }, function () {
+
+                if (!($(".card").hasClass("flipped")) && !($(this).hasClass("matched"))) {
+                    $(".card").children(".front").hide();
+                    $(".card").children(".back").show();
+                }
+
+                if (!($(this).hasClass("matched"))) {
+                    $(this).children().animate({
+                        "margin": "7.5%",
+                        "width": "85%",
+                        "height": "85%"
+                    }, {
+                        "duration": 100,
+                        "queue": false
+                    })
+                }
+            })
+            .click(function () {
+                if (!($(this).hasClass("matched"))) {
+
+                    $(this).children().animate({
+                        "margin": "2.5%",
+                        "width": "95%",
+                        "height": "95%"
+                    }, {
+                        "duration": 50,
+                        "queue": true
+                    });
+
+                    $(this).children().animate({
+                        "margin": "5%",
+                        "width": "90%",
+                        "height": "90%"
+                    }, {
+                        "duration": 50,
+                        "queue": false
+                    });
+
+                    if ($(".flipped").length < 2) {
+                        $(this).children(".back").hide();
+                        $(this).children(".front").show();
+
+                        $(this).addClass("flipped").addClass("first");
+                        if ($(".flipped").length == 2) {
+                            $(this).removeClass("first");
+
+                            var flippedColor = "";
+                            for (var i = 0; i < colorsArray.length; i++) {
+                                if ($(".first").hasClass(colorsArray[i])) {
+                                    flippedColor = colorsArray[i];
+                                }
+                            }
+                            if ($(this).hasClass(flippedColor)) {
+                                $(".flipped").children().animate({
+                                    "margin": "0%",
+                                    "width": "100%",
+                                    "height": "100%"
+                                }, {
+                                    "duration": 50,
+                                    "queue": true
+                                })
+                                    .animate({
+                                        "margin": "50%",
+                                        "width": "0%",
+                                        "height": "0%"
+                                    }, {
+                                        "duration": 50,
+                                        "queue": true
+                                    });
+
+                                $(".flipped").addClass("matched");
+                            }
+
+                            $(".flipped").removeClass("flipped").removeClass("first");
+                        }
+                    }
+
+                    if ($(".matched").length == nElements) {
+                        $(".card").hide();
+                        $("h1").show();
+                    }
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
