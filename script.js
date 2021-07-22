@@ -17,7 +17,6 @@ var Pontos = 0;
 var Erros = 0;
 var EmCurso = false;
 var ClickBlock = false;
-var win = false;
 
 var Positions = null;
 var Selected_01 = { card: null, img: null, imgIndex: -1 };
