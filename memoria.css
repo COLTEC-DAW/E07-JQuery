@@ -1,0 +1,18 @@
+#baralho img{
+    margin-bottom: 20px;
+    border: thin solid black;
+    margin-left: 14%;
+    width: 30%;
+    border-radius: 10px;
+}
+.linha{
+    align-items: center;
+}
+h1{
+    text-align: center;
+    color: red;
+    
+}
+#jogo #cabecalho{
+text-align: center;
+}
