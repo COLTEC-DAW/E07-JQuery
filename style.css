@@ -1,0 +1,24 @@
+.cards{
+    float: left;
+    cursor: pointer;
+}
+
+.tabuleiro>.container{
+  border: 1px solid black;
+  margin-top: 1.5%;
+
+}
+#titulo{
+  text-align: center;
+  border-bottom: lightslategrey 1px solid;
+  margin-bottom: 2%;
+}
+.back,.front{
+  margin-bottom: 2%;
+}
+.back>img,.front>img{
+  border-color: black;
+}
+h1{
+  text-align: center;
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="tabuleiro col-8">
+                <div class="container">
+                    <div class="col" id="titulo">
+                        <h1>Jogo da Memória com JQuery</h1>
+                    </div>
+                    <!-- Primeira Fileira -->
+                    <div class="row  no-gutters">
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards" id="card1">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards" id="card2">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards" id="card3">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards" id="card4">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Segunda Fileira -->
+                    <div class="row  no-gutters">
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards" id="card5">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards" id="card6">
+                                <div class="front">
+                                    <img class ="img-thumbnail" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail" src="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards" id="card7">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards" id="card8">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Terceira Fileira -->
+                    <div class="row  no-gutters">
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards">
+                                <div class="front">
+                                    <img class ="img-thumbnail" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail" src="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quarta Fileira -->
+                    <div class="row  no-gutters">
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards">
+                                <div class="front">
+                                    <img class ="img-thumbnail" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail" src="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class ="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center col">
+                            <div class="cards">
+                                <div class="front">
+                                    <img class ="img-thumbnail img-fluid" src="./Memoria/Fundo.png" alt="Tate no Yuusha">
+                                </div>
+                                <div class="back">
+                                    <img class="img-thumbnail img-fluid" src="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="informacoes col-4">
+                <h1>Infos</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Flip/1.1.2/jquery.flip.js"></script>
+    <script src="./jogoDaMemoria.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
