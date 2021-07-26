@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title> Jogo da memória </title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <button id="botao1" name="play" type="button" onclick="inicio()">Iniciar</button>
+        <button id="botao2" name="play" type="button" onclick="reinicio()">Reiniciar</button>
+        <div class="pontuacao" id="pontos"> Pontuação: 0 </div>
+        <H1>Jogo Da Memória</H1>
+     <div class="container">
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 01, coluna 01 --> <img src="carta_virada.png"></div>
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 01, coluna 02 --> <img src="carta_virada.png"></div>
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 01, coluna 03 --> <img src="carta_virada.png"></div>
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 01, coluna 04 --> <img src="carta_virada.png"></div>
+
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 02, coluna 01 --> <img src="carta_virada.png"></div>
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 02, coluna 02 --> <img src="carta_virada.png"></div>
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 02, coluna 03 --> <img src="carta_virada.png"></div>
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 02, coluna 04 --> <img src="carta_virada.png"></div>
+
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 03, coluna 01 --> <img src="carta_virada.png"></div>
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 03, coluna 02 --> <img src="carta_virada.png"></div>
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 03, coluna 03 --> <img src="carta_virada.png"></div>
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 03, coluna 04 --> <img src="carta_virada.png"></div>
+
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 04, coluna 01 --> <img src="carta_virada.png"></div>
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 04, coluna 02 --> <img src="carta_virada.png"></div>
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 04, coluna 03 --> <img src="carta_virada.png"></div>
+        <div class="carta" onclick="CardClick(this)"><!-- Linha 04, coluna 04 --> <img src="carta_virada.png"></div>
+
+            <footer id="rodape">
+                <p>&copy;GuilhermeRSM</p>
+            </footer>
+    </div>       
+    <script src="./index.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </body>
+</html> 

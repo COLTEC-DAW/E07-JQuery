@@ -1,0 +1,52 @@
+h1{
+    text-align:center;
+    
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+img{
+    height: 175px;
+    width: 175px;
+    border: 3px solid;
+    
+
+}
+div.pontuacao{
+    font-size: 180%;
+    padding: none;
+}
+div.carta{
+    height: 181px;
+    width: 181px;
+}
+.container {
+    
+        display: grid;
+        grid-template-columns: repeat(4, minmax(300px, 200px));
+        grid-template-rows: repeat(4, minmax(220px, 200px));
+        margin: 0%;  
+        justify-content:center;
+        
+}   
+
+footer{
+    
+    font-size: 180%;
+    font-family: "Comic Sans MS", "Comic Sans", cursive; 
+    justify-content:center;
+  
+}
+body{
+    background-color: lavender;
+    float:none;
+    margin: auto;
+  
+}
+button{
+    font-size: 20px;
+    float:left;
+    display: grid;
+    margin: auto;  
+    text-align: center;
+    align-items: center; 
+    justify-content: center;
+} 
