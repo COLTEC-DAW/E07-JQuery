@@ -4,6 +4,7 @@
     <title>Jogo da Memória</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="app.js"></script>
@@ -13,71 +14,91 @@
         <h1>Jogo da Memória</h1>
     </header>
     
-    <div id="memory-game">
-        <div class="config">
-            <button type="button" id="pause">
-                <p>Start</p>
-            </button>
-            <button type="button" id="restart">
-                <p>Restart</p>
-            </button>
+    <div class="container-wrap">
+        <div id="memory-game">
+            <div class="config">
+                <button type="button" id="pause">
+                    <div class="icon"><i class="bi bi-play-circle-fill"></i></div>
+                    <p>Start</p>
+                </button>
+                <button type="button" id="leader" onclick="location.href='#leaderboard'">
+                    <div class="icon"><i class="bi bi-award-fill"></i></div>
+                    <p>Results</p>
+                </button>
 
-        </div>
-        <ul class="deck">
-            <li class="card" type="diamond">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card" type="plane">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card" type="anchor">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card" type="bolt" >
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card" type="cube">
-                <i class="fa fa-cube"></i>
-            </li>
-            <li class="card" type="anchor">
-                <i class="fa fa-anchor"></i>
-            </li>
-            <li class="card" type="leaf">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card" type="bicycle">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card" type="diamond">
-                <i class="fa fa-diamond"></i>
-            </li>
-            <li class="card" type="bomb">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card" type="leaf">
-                <i class="fa fa-leaf"></i>
-            </li>
-            <li class="card" type="bomb">
-                <i class="fa fa-bomb"></i>
-            </li>
-            <li class="card" type="bolt">
-                <i class="fa fa-bolt"></i>
-            </li>
-            <li class="card" type="bicycle">
-                <i class="fa fa-bicycle"></i>
-            </li>
-            <li class="card" type="plane">
-                <i class="fa fa-paper-plane-o"></i>
-            </li>
-            <li class="card" type="cube">
-                <i class="fa fa-cube"></i>
-            </li>
-        </ul>
-        <div class="stats">
-            <p data-count="0" id="moves">Moves: </p> 
-            <p data-count="0" id="errors">Erros: </p>
-            <p data-count="0" id="matches">Acertos: </p>
+            </div>
+            <ul class="deck">
+                <li class="card" type="diamond">
+                    <i class="fa fa-diamond"></i>
+                </li>
+                <li class="card" type="plane">
+                    <i class="fa fa-paper-plane-o"></i>
+                </li>
+                <li class="card" type="anchor">
+                    <i class="fa fa-anchor"></i>
+                </li>
+                <li class="card" type="bolt" >
+                    <i class="fa fa-bolt"></i>
+                </li>
+                <li class="card" type="cube">
+                    <i class="fa fa-cube"></i>
+                </li>
+                <li class="card" type="anchor">
+                    <i class="fa fa-anchor"></i>
+                </li>
+                <li class="card" type="leaf">
+                    <i class="fa fa-leaf"></i>
+                </li>
+                <li class="card" type="bicycle">
+                    <i class="fa fa-bicycle"></i>
+                </li>
+                <li class="card" type="diamond">
+                    <i class="fa fa-diamond"></i>
+                </li>
+                <li class="card" type="bomb">
+                    <i class="fa fa-bomb"></i>
+                </li>
+                <li class="card" type="leaf">
+                    <i class="fa fa-leaf"></i>
+                </li>
+                <li class="card" type="bomb">
+                    <i class="fa fa-bomb"></i>
+                </li>
+                <li class="card" type="bolt">
+                    <i class="fa fa-bolt"></i>
+                </li>
+                <li class="card" type="bicycle">
+                    <i class="fa fa-bicycle"></i>
+                </li>
+                <li class="card" type="plane">
+                    <i class="fa fa-paper-plane-o"></i>
+                </li>
+                <li class="card" type="cube">
+                    <i class="fa fa-cube"></i>
+                </li>
+            </ul>
+            <div class="stats">
+                <p data-count="0" id="moves">Moves: </p> 
+                <p data-count="0" id="errors">Erros: </p>
+                <p data-count="0" id="matches">Acertos: </p>
+                <p id="timer">00:00</p>
+                <p id="nota"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
+            </div>
         </div>
     </div>
+
+    <footer>
+        Desenvolvido por Henrique Melo
+    </footer>
+
+    <div class="popup" id="congrats">
+        <div>
+            <h1>Parabéns</h1>
+            
+            <button type="button" id="play-again"><p>Jogar novamente</p></button>
+        </div>
+    </div>
+
+    
 </body>
 </html>
