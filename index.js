@@ -94,16 +94,12 @@ function CardClick(carta){
         ImagesTag[index].src = verso_cartas[index];
         verifica();  
         if(pontos>=8){
-            alert("Parabéns, vc ganhou o jogo!")
+            alert("Parabéns, vc ganhou o jogo!");
+            alert("Clique em reiniciar para jogar novamente");
         }
         return;
-    }
-    
-
-
-    
+    } 
  return;
 }
 
-alert("As cartas foram embaralhadas");
- 
+  
