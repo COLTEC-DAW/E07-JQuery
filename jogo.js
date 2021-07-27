@@ -52,9 +52,7 @@ function flipCard(){
 function checkForMatch(){
     let isMatch = firstCard.dataset.card === secondCard.dataset.card; 
 
-    if(!isMatch) {
-        desableCards();
-    }
+    !isMatch ? desableCards() : resetCards(isMatch);
 }
 
 /** Desabilita o flip das cartas, mas somente se as cartas não são iguais; */
@@ -70,12 +68,26 @@ function desableCards(){
 }
 
 /** função que limpa as cartas */
-function resetCards(){
+function resetCards(isMatch = false){
+    if(isMatch) { // removendo os clicks das cartas;
+        firstCard.removeEventListener('click', flipCard); 
+        secondCard.removeEventListener('click', flipCard); 
+    }
     [firstCard, secondCard, lockCard] = [null, null, false];
 }
 
 /** É para dar um click a cada carta do jogo de memória; */
 cartas.forEach( carta => carta.addEventListener('click', flipCard));
 
-
-
+/** Aleatoriazação (sla se existe essa palavra) das cartas */ 
+// uma função que chama ela mesma, dai os dois parenteses:
+(function shuffle(){
+    cartas.forEach( carta => {
+        let random = Math.floor(Math.random() * 12); 
+        /** Math.random gera números de 1 a 0, já o Math.floor arrendonda o valor;
+         * dai, usando as duas funções você obtém um valor arredondado entre 0 e 1, mas multiplicando por 12 esse número varia até 11;
+         */
+        carta.style.order = random; 
+        }
+    ); 
+})();

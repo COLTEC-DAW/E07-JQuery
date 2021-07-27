@@ -5,6 +5,8 @@
 }
 
 .container{
+    width: 92%;
+    margin: auto;
     height: 100vh;
     display: flex;
     background-color: #033c44;
@@ -39,8 +41,6 @@
 }
 
 img{
-    width: 25%;
-    height: 18%;
     background-color: black;
     border-radius: 10%;
 }
