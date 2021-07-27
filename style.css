@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Imagens/Cartas */
+.carta {
+    
+    width: 24.6%;
+    height: auto;
+    max-width: 100%;
+
+    margin: 0.2%;
+
+    position: relative;
+    
+    cursor: pointer;
+}
+
+.frente, .verso {
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+
+body{
+    font-family: 'STIX Two Math', serif;
+    color: white;
+    font-size: 100%;
+
+    background-color: rgb(20, 20, 20);
+}
+
+/*Fundo de gradiente no começo da pagina*/
+.fundo{
+    background: linear-gradient(180deg, rgb(26, 26, 26) 0%, rgb(20, 20, 20) 100%);
+    height: 200px;
+}
+
+/*Título*/
+h1{
+    padding-top: 2%;
+    font-family: 'Rock Salt', cursive;
+    text-align: center;
+    margin-bottom: 2.5%;
+}
+
+/*Subtítulo*/
+h2{
+    text-align: center;
+    font-size: 150%;
+    margin-bottom: 2.5%;
+}
+
+/*Area em volta do botão*/
+#botaodiv{
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 2%;
+}
+
+#infoscroll{
+    color: white;
+    background-color: rgb(20,20,20);
+    border:white solid 1px;
+    
+    border-radius: 50px;
+    display:block;
+
+    padding-top: 1.25%;
+    padding-bottom: 1.25%;
+}
+
+/*Botão em si*/
+#btnscroll{
+    color: white;
+    background-color: rgb(20,20,20);
+    border:white solid 1px;
+    
+    border-radius: 50px;
+    display:block;
+
+    padding-top: 1.25%;
+    padding-bottom: 1.25%;
+
+    cursor: pointer;
+}
+
+/*Como o botão vai ficar se passar o mouse*/
+#btnscroll:hover{
+    color: rgb(20,20,20);
+    background-color: white;
+
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+}
+
+/*O prórpio jogo*/
+#jogo {
+    margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+}
