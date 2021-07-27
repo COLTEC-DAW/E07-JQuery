@@ -1,0 +1,70 @@
+
+body {
+  height: 80vh;
+  display: flex;
+  background-color: green;
+}
+.memory-game {
+  height: 560px;
+  width: 650px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1050px;
+}
+
+.img {
+  height: 15px;
+  width: 15px;
+  margin: 5px;
+}
+.card {
+  height: 10px;
+  width: 10px;
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .3s;
+}
+.card:active {
+  transform: scale(0.96);
+  transition: transform .1ss;
+}
+
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: blue;
+}
+.card-front {
+  transform: rotateY(200deg);
+}
+
+.card.flip {
+  transform: rotateY(200deg);
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 700px) {
+  .memory-game {
+      height: 300px;
+      width: 300px;
+  }
+  .modal-content h1{
+      font-size: 55px;
+  }
+  .modal-content h2{
+      font-size: 32px;
+  }
+  .modal .modal-content{
+      padding: 12px;
+  }
+} 
