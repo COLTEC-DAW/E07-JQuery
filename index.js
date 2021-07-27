@@ -1,6 +1,6 @@
 var ImagesTag = document.body.getElementsByTagName("img");
 var CardsTag = document.body.getElementsByClassName("carta");
-var PontosTXT = document.getElementById("pontos");
+var Pontuacao = document.getElementById("pontos");
 var carta_default = "carta_virada.png";
 var primeira_carta="none";
 var segunda_carta="none";
@@ -52,7 +52,7 @@ function reinicio(){
     inicio();
 }
 function conta_pontos(){
-    PontosTXT.textContent = "Pontuação: " + pontos; 
+    Pontuacao.textContent = "Pontuação: " + pontos; 
 }
 
 function verifica(){
