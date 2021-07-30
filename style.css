@@ -12,9 +12,9 @@ img.img-thumbnail{
   margin-top: 1.5%;
 }
 
- #Titulo{
+#Titulo{
   text-align: center;
-  border-bottom: lightslategrey 1px solid;
+  border-bottom: lightslategrey 0.2rem solid;
   margin-bottom: 2%;
 }
 
@@ -24,9 +24,19 @@ img.img-thumbnail{
 
 h1{
   text-align: center;
-    color: black;
+  color: black;
+}
+
+#Pontos, #Erros{
+  color: black;
 }
 
 body{
   background-image: url("./img/Mapa.jpg");
+}
+
+.Menu{
+  border: 0.5rem solid lightslategrey;
+  background-image: url("./img/Mapa2.png");
+  background-size: cover;
 }
