@@ -1,0 +1,32 @@
+.cards{
+    float: left;
+    cursor: pointer;
+}
+
+img.img-thumbnail{
+  background-color: grey;
+  border-color: black;
+}
+
+.table>.container{
+  margin-top: 1.5%;
+}
+
+ #Titulo{
+  text-align: center;
+  border-bottom: lightslategrey 1px solid;
+  margin-bottom: 2%;
+}
+
+.back,.front{
+  margin-bottom: 2%;
+}
+
+h1{
+  text-align: center;
+    color: black;
+}
+
+body{
+  background-image: url("./img/Mapa.jpg");
+}
