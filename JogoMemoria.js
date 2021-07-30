@@ -3,7 +3,7 @@ $(document).ready(()=> {
 })
 
 var CartaSelec = [];
-
+var Cartas = $(".cards").get();
 
 
 
@@ -27,17 +27,33 @@ function AjustarCartas(){
 AjustarCartas()
 
 function VirarCarta(carta){
-    $(carta).flip(true);
+    if (carta.estado == "Desvirado"){
+        $(carta).flip(true);
+        CartaSelec.push(carta);
+    }
+    console.log(carta.estado);
+
+    if (CartaSelec.length > 0){
+        CartaSelec.length == 1 ? CartaSelec[0].estado = "Virado" : CartaSelec[1].estado = "Virado";
+    }
+    
+    // if(CartaSelec.length == 1){
+    //     CartaSelec[0].estado = "Virado"
+    // }
 }
 
 function DesvirarCarta(carta){
     $(carta).flip(false);
+    carta.estado = "Desvirado";
 }
 
 $(".cards").click(function(){
-    CartaSelec.push(this);
-    VirarCarta($(this));
+    VirarCarta(this);
     VerifPar()
+})
+
+$(".cards").get().forEach(function(carta){
+    carta.estado = "Desvirado";
 })
 
 function VerifPar(){
