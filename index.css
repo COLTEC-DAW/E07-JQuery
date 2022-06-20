@@ -1,0 +1,10 @@
+html, body{
+    height: 100vh;
+}
+.row:not(:first-child){
+    margin-top: 1.25%;
+    margin-bottom: 1.25%;
+}
+.selected-card{
+    background-color: green;
+}
