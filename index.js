@@ -8,10 +8,6 @@ function getRandomInteger(min, max) {
 function getAllCards(){
     return $(".card");
 }
-// sortear uma dupla que não tenha sido selecionada para a cor
-// Lista -> pra cada dupla a gnt tira ela da lista
-// style color: bloh;
-// class black
 function drawCards(cards){
     let numberOfColors = cards.length / 2;
     let drewCards = [];
@@ -30,7 +26,6 @@ function paintCards(drewCards){
     for(i = 0; i < drewCards.length; i += 2){
         let indexOfRandomColor = getRandomInteger(0, colors.length);
         let randomColor = colors[indexOfRandomColor];
-        console.log(colors);
         colors.splice(indexOfRandomColor, 1);
         $("#" + drewCards[i].id).addClass(randomColor);
         $("#" + drewCards[i+1].id).addClass(randomColor);
@@ -41,13 +36,24 @@ function initGame(){
     $(".card").click(this, handleCardClick);
 }
 function handleCardClick(card){
+    card = $("#" + card.target.id)[0];
     if (!cardSelected){
-        console.log(card.target)
-        firstCardSelected = card.target;
+        firstCardSelected = card;
         cardSelected = !cardSelected;
-        console.log("clicou 1 vez" + firstCardSelected)
+
         return;
     }
+    secondCardSelected = card;
+    // checar se a classe da cor e igual
+    let colorOfFirstCard = $(firstCardSelected).attr("class").split(" ")[1];
+    let colorOfSecondCard = $(secondCardSelected).attr("class").split(" ")[1];
+    console.log(firstCardSelected);
+    if (colorOfFirstCard == colorOfSecondCard && !cardsEqual(firstCardSelected, secondCardSelected)){
+
+    }
     cardSelected = !cardSelected;
+}
+function cardsEqual(card1, card2){
+    return (card1.id == card2.id)
 }
 initGame()
