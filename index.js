@@ -2,6 +2,7 @@ let colors = ["red", "orange", "yellow", "green", "cyan", "blue", "purple", "vio
 let cardSelected = false;
 let firstCardSelected = null;
 let secondCardSelected = null;
+let isExecuting = false;
 function getRandomInteger(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -31,7 +32,7 @@ function paintCards(drewCards){
         $("#" + drewCards[i+1].id).addClass(randomColor);
     }
 }
-function makeCardsBlack(cards){
+function makeCardsBlack(cards){     
     cards.map((_, card) =>{
         $("#" + card.id).addClass("black");
     })
@@ -41,22 +42,28 @@ function initGame(){
     makeCardsBlack(getAllCards());
     $(".card").click(this, handleCardClick);
 }
-function handleCardClick(card){
-    card = $("#" + card.target.id)[0];
+async function handleCardClick(card){
+    if (isExecuting) return
+    card = $("#" + card.target.id)[0]
     if (!cardSelected){
         firstCardSelected = card;
+        $(firstCardSelected).removeClass("black");
         cardSelected = !cardSelected;
-
         return;
     }
+    isExecuting = true;
     secondCardSelected = card;
-    // checar se a classe da cor e igual
+    $(secondCardSelected).removeClass("black");
+    await new Promise(r => setTimeout(r, 1000));
+    isExecuting = false;
     let colorOfFirstCard = $(firstCardSelected).attr("class").split(" ")[1];
     let colorOfSecondCard = $(secondCardSelected).attr("class").split(" ")[1];
-    console.log(firstCardSelected);
     if (colorOfFirstCard == colorOfSecondCard && !cardsEqual(firstCardSelected, secondCardSelected)){
-
+        cardSelected = !cardSelected;
+        return;
     }
+    $(firstCardSelected).addClass("black");
+    $(secondCardSelected).addClass("black");
     cardSelected = !cardSelected;
 }
 function cardsEqual(card1, card2){
