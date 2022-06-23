@@ -31,8 +31,14 @@ function paintCards(drewCards){
         $("#" + drewCards[i+1].id).addClass(randomColor);
     }
 }
+function makeCardsBlack(cards){
+    cards.map((_, card) =>{
+        $("#" + card.id).addClass("black");
+    })
+}
 function initGame(){
     drawCards(getAllCards());
+    makeCardsBlack(getAllCards());
     $(".card").click(this, handleCardClick);
 }
 function handleCardClick(card){
