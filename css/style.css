@@ -5,28 +5,62 @@
   margin: 0;
 }
 
-.main_content {
-  padding-top: 6rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
-  padding-bottom: 6rem;
+.full_site {
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#c78fe5), color-stop(#a76ec5), color-stop(#884da5), color-stop(#692d87), to(#4b0769));
+  background-image: linear-gradient(to right top, #c78fe5, #a76ec5, #884da5, #692d87, #4b0769);
 }
 
-.card {
+.main_content {
+  padding-top: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 1rem;
+}
+
+.card_ {
   border-radius: 10px;
-  border: none;
-  height: 220px;
+  padding: 10px;
   margin-bottom: 15px;
-  background-color: #363434;
+  -webkit-perspective: 600px;
+          perspective: 600px;
 }
 
 .face {
-  height: 220px;
   border-radius: 10px;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  height: 220px;
+  width: 100%;
+  border: white 2px solid;
+}
+
+.front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.front.flipped {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  background: url("../img/0.jpg");
+  background-size: cover;
 }
 
 .back {
   background: url("../img/verso.jpg");
-  width: 100%;
+  background-size: cover;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.back:hover {
+  opacity: .85;
+}
+
+.back.flipped {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 /*# sourceMappingURL=style.css.map */

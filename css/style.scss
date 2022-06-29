@@ -2,36 +2,72 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    
 }
 
+
+.full_site{
+
+    background-image: linear-gradient(to right top, #c78fe5, #a76ec5, #884da5, #692d87, #4b0769);
+    
+}
 
 .main_content{
 
-    padding-top: 6rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    padding-bottom: 6rem;
+    padding-top: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 1rem;
 
 }
 
-.card{
+.card_{
     
     border-radius: 10px;
-    border: none;
-    height: 220px;
+    padding: 10px;
     margin-bottom: 15px;
-    background-color: rgb(54, 52, 52);
-
+    perspective: 600px;
 }
 
 .face{
-   
-    height: 220px;
+
     border-radius: 10px;
+    transition: transform .3s;
+    height: 220px;
+    width: 100%;
+    border: white 2px solid;
+
+}
+
+.front{
+    transform: rotateY(-180deg);
+}
+
+.front.flipped{
+
+    transform: rotateY(0deg);
+    background: url("../img/0.jpg");
+    background-size: cover;
+   
 }
 
 .back{
+
     background: url("../img/verso.jpg");
-    width: 100%;
+    background-size: cover;
+    backface-visibility: hidden;
+
+    &:hover{
+
+      opacity: .85;
+
+    }
+    
 }
+
+.back.flipped{
+
+    transform: rotateY(180deg);
+
+}
+
+
