@@ -30,7 +30,6 @@ h1{
 }
 
 .card_{
-    
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 15px;
@@ -48,63 +47,14 @@ h1{
 
 .front{
     transform: rotateY(-180deg);
+    backface-visibility: hidden;
 }
 
 .front.flipped{
 
-    transform: rotateY(0deg);
-    border: white 3px solid;
-   
+  transform: rotateY(0deg);
+  border: white 3px solid;
 }
-
-.front.flipped.card_0{
-
-  background: url("../img/0.jpg");
-  background-size: cover;
-
-}
-.front.flipped.card_1{
-
-    background: url("../img/1.jpg");
-    background-size: cover;
-  
-  }
-  .front.flipped.card_2{
-
-    background: url("../img/2.jpg");
-    background-size: cover;
-  
-  }
-  .front.flipped.card_3{
-
-    background: url("../img/3.jpg");
-    background-size: cover;
-  
-  }
-  .front.flipped.card_4{
-
-    background: url("../img/4.jpg");
-    background-size: cover;
-  
-  }
-  .front.flipped.card_5{
-
-    background: url("../img/5.png");
-    background-size: cover;
-  
-  }
-  .front.flipped.card_6{
-
-    background: url("../img/6.jpg");
-    background-size: cover;
-  
-  }
-  .front.flipped.card_7{
-
-    background: url("../img/7.jpg");
-    background-size: cover;
-  
-  }
 
 .back{
 

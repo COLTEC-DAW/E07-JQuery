@@ -44,52 +44,14 @@ h1 {
 .front {
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .front.flipped {
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
   border: white 3px solid;
-}
-
-.front.flipped.card_0 {
-  background: url("../img/0.jpg");
-  background-size: cover;
-}
-
-.front.flipped.card_1 {
-  background: url("../img/1.jpg");
-  background-size: cover;
-}
-
-.front.flipped.card_2 {
-  background: url("../img/2.jpg");
-  background-size: cover;
-}
-
-.front.flipped.card_3 {
-  background: url("../img/3.jpg");
-  background-size: cover;
-}
-
-.front.flipped.card_4 {
-  background: url("../img/4.jpg");
-  background-size: cover;
-}
-
-.front.flipped.card_5 {
-  background: url("../img/5.png");
-  background-size: cover;
-}
-
-.front.flipped.card_6 {
-  background: url("../img/6.jpg");
-  background-size: cover;
-}
-
-.front.flipped.card_7 {
-  background: url("../img/7.jpg");
-  background-size: cover;
 }
 
 .back {
