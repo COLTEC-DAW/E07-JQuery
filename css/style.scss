@@ -2,12 +2,21 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+} 
+
+h1{
+
+    text-align: center;
+    font-size: 25px;  
+    padding: 10px;
 }
 
 
 .full_site{
 
-    background-image: linear-gradient(to right top, #c78fe5, #a76ec5, #884da5, #692d87, #4b0769);
+    //background-image: linear-gradient(to right top, #c78fe5, #a76ec5, #884da5, #692d87, #4b0769);
+    background-color: #0e0b1b;
+    color: white;
     
 }
 
@@ -34,7 +43,6 @@
     transition: transform .3s;
     height: 220px;
     width: 100%;
-    border: white 2px solid;
 
 }
 
@@ -45,16 +53,65 @@
 .front.flipped{
 
     transform: rotateY(0deg);
-    background: url("../img/0.jpg");
-    background-size: cover;
+    border: white 3px solid;
    
 }
+
+.front.flipped.card_0{
+
+  background: url("../img/0.jpg");
+  background-size: cover;
+
+}
+.front.flipped.card_1{
+
+    background: url("../img/1.jpg");
+    background-size: cover;
+  
+  }
+  .front.flipped.card_2{
+
+    background: url("../img/2.jpg");
+    background-size: cover;
+  
+  }
+  .front.flipped.card_3{
+
+    background: url("../img/3.jpg");
+    background-size: cover;
+  
+  }
+  .front.flipped.card_4{
+
+    background: url("../img/4.jpg");
+    background-size: cover;
+  
+  }
+  .front.flipped.card_5{
+
+    background: url("../img/5.png");
+    background-size: cover;
+  
+  }
+  .front.flipped.card_6{
+
+    background: url("../img/6.jpg");
+    background-size: cover;
+  
+  }
+  .front.flipped.card_7{
+
+    background: url("../img/7.jpg");
+    background-size: cover;
+  
+  }
 
 .back{
 
     background: url("../img/verso.jpg");
     background-size: cover;
     backface-visibility: hidden;
+    border: white 3px solid;
 
     &:hover{
 

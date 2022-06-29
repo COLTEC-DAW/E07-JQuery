@@ -1,17 +1,16 @@
-  $(document).ready(function(){
+$(document).ready(function(){
 
-        for(var i = 0; i < 16; i++){
+    for(let i = 0; i < 16; i++){
 
-            $("#card_" + i).click(function(){
-                
-                var faces = this.getElementsByClassName("face");
-                faces[0].classList.toggle("flipped");
-                faces[1].classList.toggle("flipped");
-                console.log(faces);
-
-                
+       
+        $("#card_" + i).click(function(){
+                const back = 0;
+                const front = 1;
+                let faces = this.getElementsByClassName("face");
+                faces[back].classList.toggle("flipped");
+                faces[front].classList.toggle("flipped");
+            
             });
-
         }
 
     });
