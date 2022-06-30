@@ -1,26 +1,17 @@
 $(document).ready(function(){
 
-    addImgsAndIdToTheCards();
+    flipCard();
 
 });
 
 
-function addImgsAndIdToTheCards(){
+function flipCard(){
 
-    let imgs = [];
+    let imgs = addImgsAndIdToTheCards();
     let flippedCards = [];
 
     for(let i = 0; i < 16; i++){
 
-        let img ={
-            src: "../img/" + i + ".jpg",
-            id: i%8
-        };
-
-        imgs.push(img);
-
-        imgs = randomSort(imgs);
-       
         $("#card_" + i).click(function(){
 
             if(flippedCards.length < 2){
@@ -50,6 +41,27 @@ function addImgsAndIdToTheCards(){
                 
         });
     }
+}
+
+function addImgsAndIdToTheCards(){
+
+    let imgs = [];
+
+    for(let i = 0; i < 16; i++){
+
+        let img ={
+        src: "img/" + i + ".jpg",
+        id: i%8
+        };
+
+        imgs.push(img);
+
+    }
+
+    imgs = randomSort(imgs);
+
+    return imgs;
+
 }
 
 function randomSort(imgsInOrder){
