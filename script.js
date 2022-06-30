@@ -1,11 +1,11 @@
 $(document).ready(function(){
 
-    flipCard();
+    flipCards();
 
 });
 
 
-function flipCard(){
+function flipCards(){
 
     let imgs = addImgsAndIdToTheCards();
     let flippedCards = [];
