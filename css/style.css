@@ -57,6 +57,7 @@ h1 {
 .back {
   background: url("../img/verso.jpg");
   background-size: cover;
+  background-position: center;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   border: white 3px solid;

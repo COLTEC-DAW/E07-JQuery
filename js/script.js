@@ -30,9 +30,10 @@ function addImgsAndIdToTheCards(){
             faces[front].classList.toggle("flipped");
             faces[front].style.background = "url('"+ imgs[i].src +"')";
             faces[front].style.backgroundSize = "cover";
+            faces[front].style.backgroundPosition = "center";
             faces[front].setAttribute("id", imgs[i].id);
                 
-            });
+        });
     }
 }
 
