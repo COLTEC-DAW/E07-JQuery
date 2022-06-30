@@ -1,4 +1,5 @@
 const cardBoard = document.querySelector("#cardboard");
+
 const images = [
     'castelo de diamante.jpg',
     'lago dos cisnes.jpg',
@@ -10,15 +11,17 @@ const images = [
     'tres mosqueteiras.jpg'  
 ];
 
+
+
 let cardHTML = "";
 
 images.forEach(img =>{
     cardHTML += `
-        <div>
-            <img src="/assets/${img}">
-            <img src="/assets/barbie-logo.svg">
+        <div class = "memory-card">
+            <img class = "front-face" src = "/assets/${img}">
+            <img class = "back-face" src = "/assets/backCarta.png">
         <div>
         `;
 });
 
-cardBoard.innerHTML = cardHTML;
+cardBoard.innerHTML = cardHTML + cardHTML;

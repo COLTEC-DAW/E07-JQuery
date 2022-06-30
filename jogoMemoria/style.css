@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
 
 body{
@@ -13,5 +12,25 @@ body{
 #cardboard{
     width: 640px;
     height: 640px;
-    margin:auto;
+    margin: auto;
+    display: flex !important;
+}
+
+.memory-card{
+    width: 25%;
+    height: 33%;
+    display: flex;
+    margin: 5px;
+}
+
+.memory-card img{
+    width: 290px;                  
+    height: 480px;
+
+}
+
+.back-face, .front-face{
+    width: 100%;
+    height: 100%;
+    background-color: black;
 }
