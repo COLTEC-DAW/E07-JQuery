@@ -64,15 +64,56 @@ h1 {
 
 .card {
     display: flex;
-    align-content: center;
     justify-content: center;
-    
+    align-items: center;
+
     width: 8%;
     height: 170px;
     margin: 8px;
     padding: 50px;
 
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.card:hover {
+    .front_face {
+        background-image: url("https://i.pinimg.com/originals/67/97/03/6797033c3925c0bcd4f14bd7153c5774.gif");
+        background-size: auto;
+        transform: scale(1.1);
+    }
+}
+
+.front_face {
+    width: inherit;
+    height: inherit;
+    margin: inherit;
+    padding: inherit;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+
+    backface-visibility: hidden;
     background-color: $primaryColor;
     border-radius: 8px;
     border: 2px solid black;
+}
+
+.back_face {
+    width: inherit;
+    height: inherit;
+    margin: inherit;
+    padding: inherit;
+
+    display: none;
+    align-content: center;
+    justify-content: center;
+
+    backface-visibility: hidden;
+    background-size: cover;
+    border-radius: 8px;
+    border: 2px solid black;
+    transform: rotateY(180deg);
 }

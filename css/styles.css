@@ -85,17 +85,66 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 8%;
+  height: 170px;
+  margin: 8px;
+  padding: 50px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.card:hover .front_face {
+  background-image: url("https://i.pinimg.com/originals/67/97/03/6797033c3925c0bcd4f14bd7153c5774.gif");
+  background-size: auto;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.front_face {
+  width: inherit;
+  height: inherit;
+  margin: inherit;
+  padding: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 8%;
-  height: 170px;
-  margin: 8px;
-  padding: 50px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   background-color: #294023;
   border-radius: 8px;
   border: 2px solid black;
+}
+
+.back_face {
+  width: inherit;
+  height: inherit;
+  margin: inherit;
+  padding: inherit;
+  display: none;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background-size: cover;
+  border-radius: 8px;
+  border: 2px solid black;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 /*# sourceMappingURL=styles.css.map */
