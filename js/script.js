@@ -25,9 +25,12 @@ function addImgsAndIdToTheCards(){
 
             if(flippedCards.length < 2){
 
-    
             const back = 0, front = 1;
             let faces = this.getElementsByClassName("face");
+
+            if(faces[back].classList.length > 2) return;
+            
+            flippedCards.push(this);
 
             faces[back].classList.toggle("flipped");
             faces[front].classList.toggle("flipped");
@@ -36,12 +39,13 @@ function addImgsAndIdToTheCards(){
             faces[front].style.backgroundPosition = "center";
             faces[front].setAttribute("id", imgs[i].id);
 
-            flippedCards.push(this);
-
             }else{
 
-                console.log(flippedCards);
-                
+                flippedCards[0].childNodes[1].classList.toggle("flipped");
+                flippedCards[0].childNodes[1].childNodes[1].classList.toggle("flipped");
+                flippedCards[1].childNodes[1].classList.toggle("flipped");
+                flippedCards[1].childNodes[1].childNodes[1].classList.toggle("flipped");
+                flippedCards = [];
             }
                 
         });
