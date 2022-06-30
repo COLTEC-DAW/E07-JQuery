@@ -8,6 +8,7 @@ $(document).ready(function(){
 function addImgsAndIdToTheCards(){
 
     let imgs = [];
+    let flippedCards = [];
 
     for(let i = 0; i < 16; i++){
 
@@ -22,6 +23,8 @@ function addImgsAndIdToTheCards(){
        
         $("#card_" + i).click(function(){
 
+            if(flippedCards.length < 2){
+
     
             const back = 0, front = 1;
             let faces = this.getElementsByClassName("face");
@@ -32,6 +35,14 @@ function addImgsAndIdToTheCards(){
             faces[front].style.backgroundSize = "cover";
             faces[front].style.backgroundPosition = "center";
             faces[front].setAttribute("id", imgs[i].id);
+
+            flippedCards.push(this);
+
+            }else{
+
+                console.log(flippedCards);
+                
+            }
                 
         });
     }
