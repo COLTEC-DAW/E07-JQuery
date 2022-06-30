@@ -1,0 +1,22 @@
+.card_{
+    
+    padding: 20px;
+}
+
+.content{
+
+    background-color: blue;
+    height: 250px;
+    border-radius: 10px;
+    border: 4px black solid;
+
+   
+}
+
+.main-content{
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-left: 3rem;
+    padding-bottom: 2rem;
+
+}
