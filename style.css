@@ -9,30 +9,46 @@ body
 {
     height: 100vh;
     display: flex;
+
+    background-color: #191119;
+}
+
+.logo
+{
+    width: 60%;
+    height: 15%;
+
+    position: relative;
+    top: 5%;
+    left: 20%;
 }
 
 .memory-game 
 {
-    width: 1500px;
-    height: 640px;
+    width: 30%;
+    height: 30%;
     margin: 0 auto;
 
+    position: relative;
+    top: 25%;
+    right: 29%;
+
     display: flex; /*! ISSO AQUI FAZ O SISTEMA DE SORTEAR AS CARTAS FUNCIONAR, NÃO MUDA*/
-    
+
     flex-wrap: wrap;
     perspective: 1000px;
 }
 
 .card 
 {
-    width: calc(25% - 10px);
-    height: calc(33.333% - 10px);
-    margin: 5px;
+    height: 55%;
+    width: 20%;
+    margin: 1%;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
-    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 .card:active
 {
