@@ -1,36 +1,80 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
 body{
-    height: 100vh;
-    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: #EC4399;
 }
 
-#cardboard{
-    width: 640px;
-    height: 640px;
-    margin: auto;
-    display: flex !important;
+header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 75px;
+    margin-bottom: 75px;
 }
 
-.memory-card{
-    width: 25%;
-    height: 33%;
-    display: flex;
+.grade {
+
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    margin-top: 35px;
+}
+
+.card, .card1, .card2, .card3, .card4, .card5, .card6, .card7, .card8 {
+
+    padding: 0;
     margin: 5px;
-}
-
-.memory-card img{
-    width: 290px;                  
+    width: 290px;
     height: 480px;
-
 }
 
-.back-face, .front-face{
-    width: 100%;
-    height: 100%;
-    background-color: black;
+
+
+.card1 {
+
+    background-image: url("/assets/castelo\ de\ diamante.jpg");
 }
+
+.card2 {
+
+    background-image: url("/assets/lago\ dos\ cisnes.jpg");
+}
+
+.card3 {
+
+    background-image: url("/assets/magia\ dos\ aladus.png");
+}
+
+.card4 {
+
+    background-image: url("/assets/segredo\ das\ fadas.jpg");
+    background-size: 290px 480px;
+}
+
+.card5 {
+
+    background-image: url("/assets/princesa\ e\ a\ plebeia.jpg");
+    background-size: 290px 480px;
+}
+
+.card6 {
+
+    background-image: url("/assets/quebra\ nozes.jpg");
+    background-size: 290px 480px;
+}
+
+.card7 {
+
+    background-image: url("/assets/rapunzel.jpg");
+}
+
+.card8{
+
+    background-image: url("/assets/tres\ mosqueteiras.jpg");
+}
+
+
+
