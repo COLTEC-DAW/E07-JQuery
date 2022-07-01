@@ -1,12 +1,13 @@
 $(document).ready(function(){
 
-    flipCards();
+    flipCardsOnclick();
 
 });
 
 
-function flipCards(){
+function flipCardsOnclick(){
 
+    var rightCards = 0;
     let imgs = addImgsAndIdToTheCards();
     let flippedCards = [];
 
@@ -20,8 +21,6 @@ function flipCards(){
             let faces = this.getElementsByClassName("face");
 
             if(faces[back].classList.length > 2) return;
-            
-            flippedCards.push(this);
 
             faces[back].classList.toggle("flipped");
             faces[front].classList.toggle("flipped");
@@ -29,6 +28,25 @@ function flipCards(){
             faces[front].style.backgroundSize = "cover";
             faces[front].style.backgroundPosition = "center";
             faces[front].setAttribute("id", imgs[i].id);
+
+            flippedCards.push(this);
+
+            if (flippedCards.length === 2){
+
+                if(flippedCards[0].childNodes[1].childNodes[1].id === flippedCards[1].childNodes[1].childNodes[1].id){
+
+                    flippedCards[0].childNodes[1].childNodes[1].classList.toggle("right_cards");
+                    flippedCards[1].childNodes[1].childNodes[1].classList.toggle("right_cards");
+
+                    flippedCards = [];
+                    rightCards++;
+
+                    if (rightCards == 8){
+
+                        
+                    }
+                }
+            }
 
             }else{
 
@@ -38,7 +56,7 @@ function flipCards(){
                 flippedCards[1].childNodes[1].childNodes[1].classList.toggle("flipped");
                 flippedCards = [];
             }
-                
+                  
         });
     }
 }
