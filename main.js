@@ -5,8 +5,8 @@ let virouCarta = false;
 let primeiraCarta, segundaCarta;
 let trava = false;
 
-var audio_acertou = new Audio('smb_coin.wav');
-var audio_errou = new Audio('smb_bump.wav');
+var audio_acertou = new Audio('audios/smb_coin.wav');
+var audio_errou = new Audio('audios/smb_bump.wav');
 
 (function embaralha()
 {
@@ -44,7 +44,7 @@ function desviraCartas()
         primeiraCarta.classList.remove('virada');
         segundaCarta.classList.remove('virada');
         trava = false;
-    }, 500);
+    }, 1500);
 }
 
 function viraCarta()

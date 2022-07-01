@@ -1,34 +1,47 @@
-html, body{
-    height: 100vh;
-}
-.row:not(:first-child){
-    margin-top: 1.25%;
-    margin-bottom: 1.25%;
-}
-.style1{
-    height: 20vh;
-}
-.style2{
-    height: 100%;
-}
-.card{
-    position: relative;
-    width: 100%; 
-    height: 100%;
-    transform-style: preserve-3d;
+* 
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.card:active{
+body 
+{
+    height: 100vh;
+    display: flex;
+}
+
+.memory-game 
+{
+    width: 1500px;
+    height: 640px;
+    margin: 0 auto;
+
+    display: flex; /*! ISSO AQUI FAZ O SISTEMA DE SORTEAR AS CARTAS FUNCIONAR, NÃO MUDA*/
+    
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.card 
+{
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+.card:active
+{
     transform: scale(0.97);
     transition: all 0.2s ease-in-out;
 }
 
-img{
-    width: 100%;
-    height: 100%;
-}
-
-.card.virada{
+.card.virada
+{
     transform: rotateY(180deg);
 }
 
@@ -36,7 +49,12 @@ img{
 .img-verso,
 .img-frente
 {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
     position: absolute;
+    border-radius: 5px;
+    background: #1C7CCC;
     backface-visibility: hidden;
 }
 
@@ -44,35 +62,4 @@ img{
 .img-frente
 {
     transform: rotateY(180deg);
-}
-
-
-
-/* cores */
-.preto{
-    background-color: black !important;
-}
-.vermelho{
-    background-color: #ff4d4d;
-}
-.laranja{
-    background-color: #ffa74f;
-}
-.amarelo{
-    background-color: #fff674;
-}
-.verde{
-    background-color: #52ff8c;
-}
-.azul_claro{
-    background-color: #4bdbff;
-}
-.azul_escuro{
-    background-color: #5858ff;
-}
-.violeta{
-    background-color: #9359ff;
-}
-.roxo{
-    background-color: #bc63fc;
 }
