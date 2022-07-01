@@ -43,6 +43,7 @@ function flipCardsOnclick(){
 
                     if (rightCards == 8){
 
+                        $("#modal-winner").modal('show');
                         
                     }
                 }
