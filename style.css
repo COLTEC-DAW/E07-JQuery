@@ -1,0 +1,46 @@
+html, body{
+    height: 100vh;
+}
+.row:not(:first-child){
+    margin-top: 1.25%;
+    margin-bottom: 1.25%;
+}
+.style1{
+    height: 20vh;
+}
+.style2{
+    height: 100%;
+}
+.style3{
+    width: 100%; 
+    height: 100%;
+}
+
+/* cores */
+.preto{
+    background-color: black !important;
+}
+.vermelho{
+    background-color: #ff4d4d;
+}
+.laranja{
+    background-color: #ffa74f;
+}
+.amarelo{
+    background-color: #fff674;
+}
+.verde{
+    background-color: #52ff8c;
+}
+.azul_claro{
+    background-color: #4bdbff;
+}
+.azul_escuro{
+    background-color: #5858ff;
+}
+.violeta{
+    background-color: #9359ff;
+}
+.roxo{
+    background-color: #bc63fc;
+}
