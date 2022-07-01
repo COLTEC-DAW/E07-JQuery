@@ -63,13 +63,13 @@ h1{
     background-position: center;
     backface-visibility: hidden;
     border: white 3px solid;
-
-    &:hover{
-
-      opacity: .85;
-
-    }
     
+}
+
+.flipped.right_cards{
+
+    border: green 4px solid;
+
 }
 
 .back.flipped{
