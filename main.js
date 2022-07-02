@@ -6,9 +6,6 @@ let primeiraCarta, segundaCarta;
 let trava = false;
 let ganhou = false;
 
-var audio_acertou = new Audio('audios/smb_coin.wav');
-var audio_errou = new Audio('audios/smb_bump.wav');
-
 let listaCartas = Array.from(cartas);
 
 (function embaralha()
@@ -24,18 +21,27 @@ function comparaCartas()
     if (primeiraCarta.dataset.framework === segundaCarta.dataset.framework)
     {
         desabilitaCartas();
-        audio_acertou.play();
+
+        
         for (let carta of listaCartas) 
         {
             if (!carta.classList.contains('virada'))
             {
+                var audio_acertou = new Audio('audios/acerto.wav');
+                audio_acertou.volume = 0.17;
+                audio_acertou.play();
                 ganhou = false
                 return
             }else{ganhou = true}
         }
+
+
         if (ganhou)
         {
-        setTimeout(() => {
+            var ganhou = new Audio('audios/ganhouMuito.wav');
+            ganhou.volume = 0.25;
+            ganhou.play();
+            setTimeout(() => {
                 alert('Parabéns, você ganhou!');
             }, 500);
         }
@@ -43,6 +49,8 @@ function comparaCartas()
     else
     {
         desviraCartas();
+        var audio_errou = new Audio('audios/erro.wav');
+        audio_errou.volume = 0.25;
         audio_errou.play();
     }
 }
