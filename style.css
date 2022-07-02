@@ -1,16 +1,32 @@
+body{
+    background-color: rgb(7, 14, 67);
+}
+
+header{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1{
+    font-size: 5em;
+    color: rgb(37, 164, 120);
+    font-weight: bold;
+}
+
 .card_{
-    
     padding: 20px;
 }
 
-.content{
+@keyframes rotateAnimation {
+	from {transform: rotateY(0deg);}
+	to {transform: rotateY(-180deg);}
+}
 
-    background-color: blue;
+.content{
+    background-color: rgb(13, 69, 133);
     height: 250px;
     border-radius: 10px;
     border: 4px black solid;
-
-   
 }
 
 .main-content{
@@ -18,5 +34,9 @@
     padding-right: 4rem;
     padding-left: 3rem;
     padding-bottom: 2rem;
+}
 
+.content img{
+    width: 100%;
+    height: 100%;
 }
