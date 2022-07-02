@@ -42,7 +42,7 @@ function comparaCartas()
             ganhou.volume = 0.25;
             ganhou.play();
             setTimeout(() => {
-                alert('Parabéns, você ganhou!');
+                alert('Só o Básico');
             }, 500);
         }
     }
