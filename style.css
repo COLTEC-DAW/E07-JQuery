@@ -1,0 +1,36 @@
+
+body {
+    background: #222222;
+}
+
+h1 {
+    color: #d0d0d0;
+    text-align: center;
+    margin: 40px;
+}
+
+.memory-card {
+    position: relative;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  }
+  
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+  
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+
+.front-face,
+.back-face {
+    height: 220px;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.back-face {
+    background: url("./images/coltec.jpg");
+}
