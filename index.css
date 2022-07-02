@@ -1,5 +1,5 @@
 body{
-    background-color: #000;
+    background-color: rgb(21, 20, 20);
 }
 
 h1 {
@@ -17,7 +17,7 @@ h1 {
     padding: 35%;
     margin: 3%;
     margin-left: 12%;
-    background-color: #5bcde5;
+    background-color: #245660;
     align-items: center;
     justify-content: center;
     width: 17vw;
