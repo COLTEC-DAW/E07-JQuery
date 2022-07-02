@@ -1,0 +1,135 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+} 
+
+h1{
+
+    text-align: center;
+    font-size: 25px;  
+    padding: 10px;
+}
+
+
+.full_site{
+
+    background-color: #0e0b1b;
+    color: white;
+    
+}
+
+.title_box{
+
+    margin-top: 20px;
+
+    h1{
+
+    text-align: center;
+    font-size: 25px;
+
+    }
+}
+
+.btn_box{
+
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+
+    .btn-border{
+
+        border-radius: 10px;
+        color: white;
+        font-size: 18px;
+        padding: 12px;
+        border: 3px white solid;
+    }
+
+    a{
+
+        width: 30%;
+        text-decoration: none;
+        
+    }
+}
+
+.modal-hero {
+
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    border-radius: 10px;
+    background-image: linear-gradient(
+    to bottom, 
+    rgba(0,0,0,0.8) 0%,
+    rgba(0,0,0,0.2) 20%,
+    rgba(20,20,20,0.2) 80%,
+    rgba(20,20,20,0.6) 100%
+
+     ), url(../img/window_winner.jpg);
+
+}
+
+.main_content{
+
+    padding-top: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 1rem;
+
+}
+
+.card_{
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    perspective: 600px;
+    cursor: pointer;
+}
+
+.face{
+
+    border-radius: 10px;
+    transition: transform .3s;
+    height: 220px;
+    width: 100%;
+
+}
+
+.front{
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+}
+
+.front.flipped{
+
+  transform: rotateY(0deg);
+  border: white 3px solid;
+}
+
+.back{
+
+    background: url("../img/verso.jpg");
+    background-size: cover;
+    background-position: center;
+    backface-visibility: hidden;
+    border: white 3px solid;
+}
+
+.flipped.right_cards{
+
+    border: green 4px solid;
+
+}
+
+.back.flipped{
+
+    transform: rotateY(180deg);
+
+}
+
+
