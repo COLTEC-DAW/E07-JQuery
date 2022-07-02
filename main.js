@@ -4,9 +4,12 @@ let cartasSeleccionadas = [];
 let virouCarta = false;
 let primeiraCarta, segundaCarta;
 let trava = false;
+let ganhou = false;
 
 var audio_acertou = new Audio('audios/smb_coin.wav');
 var audio_errou = new Audio('audios/smb_bump.wav');
+
+let listaCartas = Array.from(cartas);
 
 (function embaralha()
 {
@@ -22,6 +25,20 @@ function comparaCartas()
     {
         desabilitaCartas();
         audio_acertou.play();
+        for (let carta of listaCartas) 
+        {
+            if (!carta.classList.contains('virada'))
+            {
+                ganhou = false
+                return
+            }else{ganhou = true}
+        }
+        if (ganhou)
+        {
+        setTimeout(() => {
+                alert('Parabéns, você ganhou!');
+            }, 500);
+        }
     }
     else
     {
