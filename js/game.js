@@ -26,8 +26,6 @@ let firstCard, secondCard;
 async function flipCard() {
     this.classList.add("flip");
 
-    if (flippedCardsCounter == 16 ) window.location.reload();
-
     if(!hasFlippedCard) {
         hasFlippedCard = true;
         firstCard = this;
