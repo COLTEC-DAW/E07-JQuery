@@ -1,21 +1,4 @@
-const urls = ["Armin.jpg", "Eren.jpg", "Ermin.jpg", "Levi.webp", "Mikasa.png", "paradox.jpg", "TitanDeAtaque.jpg", "TitanDaMuralha.jpg"];
-const FRONT_FACE = 0;
-const BACK_FACE = 1;
-const NUM_CARDS = 16
-
-function MemoryGame() {
-    let gameOver = false;
-
-    shuffleCards(urls);
-
-    $(".card").click(() => {
-        let display = $(".card").find(".front_face").css("display");
-
-        $(".card").css("transform", "rotateY(180deg)");
-        $(".card").find(".front_face").css("display", display == "none"? "flex" : "none");
-        $(".card").find(".back_face").css("display", display == "none"? "none" : "flex");
-    })
-}
+const NUM_CARDS = 16;
 
 function shuffleCards(contents) {
     let arrAux = [];
@@ -29,7 +12,7 @@ function shuffleCards(contents) {
             if(!arrAux.includes(randomCard)) {
                 console.log(randomCard);
                 
-                $("#" + randomCard.toString()).find(".back_face").css("background-image", `url(./assets/images/${content})`);
+                $("#" + randomCard.toString()).find(".back").css("background-image", `url(./assets/images/${content})`);
 
                 arrAux.push(randomCard);
                 counter++;
@@ -38,4 +21,44 @@ function shuffleCards(contents) {
     });
 }
 
-MemoryGame();
+let hasFlippedCard = false;
+let firstCard, secondCard;
+async function flipCard() {
+    this.classList.add("flip");
+
+    if (flippedCardsCounter == 16 ) window.location.reload();
+
+    if(!hasFlippedCard) {
+        hasFlippedCard = true;
+        firstCard = this;
+    }
+    else {
+        hasFlippedCard = false;
+        secondCard = this;
+
+        if ($(`#${firstCard.id}`).find(".back").css("background-image") == $(`#${secondCard.id}`).find(".back").css("background-image") && firstCard.id != secondCard.id) { 
+            firstCard.removeEventListener("click", flipCard);
+            secondCard.removeEventListener("click", flipCard);
+        }
+        else { 
+            setTimeout(() => {
+                firstCard.classList.remove("flip");
+                secondCard.classList.remove("flip");
+            }, 1000)
+        }
+    }
+}
+
+function memoryGame() {
+    const urls = ["Armin.jpg", "Eren.jpg", "Ermin.jpg", "Levi.jpg", "Mikasa.png", "paradox.jpg", "TitanDeAtaque.jpg", "TitanDaMuralha.jpg"];
+    const cards = document.querySelectorAll(".card");
+    let gameOver = false;
+
+    shuffleCards(urls);
+
+    cards.forEach(card => card.addEventListener("click", flipCard));
+
+
+}
+
+memoryGame();
