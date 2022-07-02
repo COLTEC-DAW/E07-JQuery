@@ -16,6 +16,10 @@ h1 {
   color: white;
 }
 
+.title_box {
+  margin-top: 20px;
+}
+
 .title_box h1 {
   text-align: center;
   font-size: 25px;
