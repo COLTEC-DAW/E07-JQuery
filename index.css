@@ -24,6 +24,7 @@ h1 {
     height: 160px;
     user-select: none;
     border-radius: 5%;
+    position: relative;
   }
   
   

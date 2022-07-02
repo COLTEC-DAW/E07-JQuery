@@ -29,7 +29,6 @@ function removeflip() {
 
 function test() {
     let iconfere = firtsCard.dataset.charac === secondCard.dataset.charac;
-
     ! iconfere ? removeflip() : reset(iconfere);
 }
 
@@ -37,7 +36,6 @@ function reset(iconfere = false) {
     if(iconfere){
         firtsCard.removeEventListener('click', flipCard);
         secondCard.removeEventListener('click', flipCard)
-
     }
     
     [firtsCard, secondCard, blockCard] = [null, null, false];
