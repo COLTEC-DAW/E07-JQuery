@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Memory Game</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -16,78 +17,70 @@
 
 <body>
   <div class="memory-game">
-    <div class="header">
-      <h1>Jogo da Memória da Info :P</h1>
-    </div>
     <div class="container">
+      <h1>Jogo da Memória da Info :P</h1>
       <div class="row">
-        <div class="memory-card col" data="elmaia">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center elmaia">
           <img class="front-face" src="./images/elmaia.jpg" alt="ElMaia" />
           <img class="back-face" />
         </div>
-        <div class="memory-card col" data="elmaia">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center elmaia">
           <img class="front-face" src="./images/elmaia.jpg" alt="ElMaia" />
           <img class="back-face" />
         </div>
-        <div class="memory-card col" data="hh">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center hh">
           <img class="front-face" src="./images/hh.jpg" alt="HH" />
           <img class="back-face" />
         </div>
-        <div class="memory-card col" data="hh">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center hh">
           <img class="front-face" src="./images/hh.jpg" alt="HH" />
           <img class="back-face" />
         </div>
-      </div>
-      <div class="row">
-        <div class="memory-card col" data="leandermay">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center leandermay">
           <img class="front-face" src="./images/leandermay.jpg" alt="LeanderMay" />
           <img class="back-face" />
         </div>
-        <div class="memory-card col" data="leandermay">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center leandermay">
           <img class="front-face" src="./images/leandermay.jpg" alt="LeanderMay" />
           <img class="back-face" />
         </div>
-        <div class="memory-card col" data="hondinha">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center hondinha">
           <img class="front-face" src="./images/hondinhaAMimir.jpg" alt="Hondinha" />
           <img class="back-face" />
         </div>
-        <div class="memory-card col" data="hondinha">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center hondinha">
           <img class="front-face" src="./images/hondinhaAMimir.jpg" alt="Hondinha" />
           <img class="back-face" />
         </div>
-      </div>
-      <div class="row">
-        <div class="memory-card col" data="danileo">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center danileo">
           <img class="front-face" src="./images/danileo.jpg" alt="Danileo" />
           <img class="back-face" />
         </div>
-        <div class="memory-card col" data="danileo">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center danileo">
           <img class="front-face" src="./images/danileo.jpg" alt="Danileo" />
           <img class="back-face" />
         </div>
-        <div class="memory-card col" data="eric">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center eric">
           <img class="front-face" src="./images/eric.jpg" alt="Eric" />
           <img class="back-face" />
         </div>
-        <div class="memory-card col" data="eric">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center eric">
           <img class="front-face" src="./images/eric.jpg" alt="Eric" />
           <img class="back-face" />
         </div>
-      </div>
-      <div class="row">
-        <div class="memory-card col" data="amimir">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center amimir">
           <img class="front-face" src="./images/aMimir.jpg" alt="AMimir" />
           <img class="back-face" />
         </div>
-        <div class="memory-card col" data="amimir">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center amimir">
           <img class="front-face" src="./images/aMimir.jpg" alt="AMimir" />
           <img class="back-face" />
         </div>
-        <div class="memory-card col" data="loud">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center loud">
           <img class="front-face" src="./images/loud.jpg" alt="Loud" />
           <img class="back-face" />
         </div>
-        <div class="memory-card col" data="loud">
+        <div class="memory-card col-xl-3 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center loud">
           <img class="front-face" src="./images/loud.jpg" alt="Loud" />
           <img class="back-face" />
         </div>
