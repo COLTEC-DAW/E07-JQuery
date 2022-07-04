@@ -23,16 +23,14 @@ function shuffleCards(contents) {
 
 let hasFlippedCard = false;
 let firstCard, secondCard;
+let flippedCards = [];
 async function flipCard() {
     this.classList.add("flip");
+    flippedCards.push(this);
 
-    if(!hasFlippedCard) {
-        hasFlippedCard = true;
-        firstCard = this;
-    }
-    else {
-        hasFlippedCard = false;
-        secondCard = this;
+    if(flippedCards.length == 2) {
+        firstCard = flippedCards.shift();
+        secondCard = flippedCards.shift();
 
         if ($(`#${firstCard.id}`).find(".back").css("background-image") == $(`#${secondCard.id}`).find(".back").css("background-image") && firstCard.id != secondCard.id) { 
             firstCard.removeEventListener("click", flipCard);
