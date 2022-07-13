@@ -25,10 +25,36 @@ cardBoard.innerHTML = cardHTML + cardHTML;
 //----------------------------------------//
 
 const cards = document.querySelectorAll(".memory-card");
-
+var numberOfClicks = 0;
+var gameWon = false;
 function flipCard()
 {
     this.classList.add("flip");
 }
+
+$(document).ready(function()
+{ 
+    $(".memory-card").click(function()
+    {
+        numberOfClicks++;
+            if(numberOfClicks % 2 != 0)
+            {
+                $(this).toggleClass("first-card");
+            } else
+            {
+                $(this).toggleClass("second-card");
+                var node1 = document.getElementsByClassName("memory-card flip first-card");
+                var firstCard = node1[0].children[0].src;
+                var node2 = document.getElementsByClassName("memory-card flip second-card");
+                var secondCard = node2[0].children[0].src;  
+                if(firstCard === secondCard)
+                {
+                    var correct = true;
+                } else {
+                }        
+            }                    
+        }    
+    );
+});
 
 cards.forEach(card => card.addEventListener("click", flipCard));
