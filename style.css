@@ -37,7 +37,6 @@ img
 .memory-card.flip 
 {
     transform: rotateY(180deg);
-
 }
 
 .front-face,
@@ -48,6 +47,7 @@ img
     padding: 0px;
     position: absolute;
     background: #90ffff;
+    backface-visibility: hidden;
 }
 
 .front-face 
