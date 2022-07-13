@@ -10,8 +10,6 @@ let imgs = [
     'fotoP(8).jpg'
 ];
 
-imgs = randomImgs(imgs);
-
 let cardHTML = '';
 
 imgs = randomize(imgs);
