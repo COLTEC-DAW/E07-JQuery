@@ -1,0 +1,34 @@
+html, body{
+    height: 100vh;
+}
+.row:not(:first-child){
+    margin-top: 1.25%;
+    margin-bottom: 1.25%;
+}
+.black{
+    background-color: black !important;
+}
+.red{
+    background-color: #FF0000;
+}
+.orange{
+    background-color: #FF7F00;
+}
+.yellow{
+    background-color: #FFF000;
+}
+.green{
+    background-color: #00FF00;
+}
+.cyan{
+    background-color: #00FFFF;
+}
+.blue{
+    background-color: #0000FF;
+}
+.purple{
+    background-color: #4B0082;
+}
+.violet{
+    background-color: #8F00FF;
+}
